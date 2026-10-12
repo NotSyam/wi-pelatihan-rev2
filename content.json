@@ -1,0 +1,1720 @@
+{
+  "course": {
+    "code": "PP/SOP/E3-029 REV-2",
+    "title": "Work Instruction Pelatihan PT PP (Persero) Tbk",
+    "effectiveDate": "Berlaku: 20 Mei 2024",
+    "logo": "assets/logo_pp.png",
+    "logoAlt": "PT PP (Persero) Tbk",
+    "totalUnits": 18,
+    "passingScore": 80,
+    "totalQuestions": 10,
+    "devMode": false,
+    "defaultDark": true,
+    "enableGatingTimer": true,
+    "gatingSeconds": 10,
+    "maxQuizAttempts": 5,
+    "webhookUrl": "https://script.google.com/macros/s/AKfycbyjbQGeDAht8zi62giuBvkRH5eiQLpD-lvQkP5xB4ibor6aMu25yZsm5JyvTN_HrdL0/exec"
+  },
+  "brand": {
+    "preset": "ptpp"
+  },
+  "units": [
+    {
+      "title": "0. Pendahuluan",
+      "subtitle": "Latar Belakang & 6 Alasan Perubahan REV-2",
+      "icon": "info",
+      "duration": "00:45",
+      "category": "Pendahuluan"
+    },
+    {
+      "title": "1. Maksud, Tujuan & Ruang Lingkup",
+      "subtitle": "7 Tujuan, 4 Kategori & Prinsip Parenting",
+      "icon": "verified",
+      "duration": "00:50",
+      "category": "Maksud, Tujuan & Ruang Lingkup"
+    },
+    {
+      "title": "2. Referensi",
+      "subtitle": "7 Standar ISO & 4 Regulasi Internal",
+      "icon": "menu_book",
+      "duration": "00:40",
+      "category": "Referensi"
+    },
+    {
+      "title": "3. Alur 5.1 Learning Needs Diagnostic",
+      "subtitle": "Bagan Alir Interaktif: CCA, DNA & TNA",
+      "icon": "schema",
+      "duration": "01:30",
+      "category": "Alur 5"
+    },
+    {
+      "title": "4. Alur 5.2 Learning Design & Development",
+      "subtitle": "Topik, Partner, Modul, K3L & Evaluasi",
+      "icon": "architecture",
+      "duration": "01:30",
+      "category": "Alur 5"
+    },
+    {
+      "title": "5. Alur 5.2 Learning Delivery & Deployment",
+      "subtitle": "Assignment vs Mandiri & Eksekusi Pembelajaran",
+      "icon": "school",
+      "duration": "01:30",
+      "category": "Alur 5"
+    },
+    {
+      "title": "6. Alur 5.4 Learning Impact Measurement",
+      "subtitle": "Form L1, Pre/Post-Test L2 & Evaluasi L3 (90 Hari)",
+      "icon": "bar_chart",
+      "duration": "01:15",
+      "category": "Alur 5"
+    },
+    {
+      "title": "7. Ketentuan Umum 6.1.1 - 6.1.3",
+      "subtitle": "Diagnostic: CCA (VRIO), DNA & Peran HCBP",
+      "icon": "psychology",
+      "duration": "01:00",
+      "category": "Ketentuan Umum 6"
+    },
+    {
+      "title": "8. Ketentuan Umum 6.2.1 - 6.2.6",
+      "subtitle": "Design & Development: 6 Pilar Perancangan",
+      "icon": "design_services",
+      "duration": "01:00",
+      "category": "Ketentuan Umum 6"
+    },
+    {
+      "title": "9. Ketentuan Umum 6.3.1 - 6.3.6",
+      "subtitle": "Delivery: LMS SiaPP, In-House, Public & Agility",
+      "icon": "cast_for_education",
+      "duration": "01:10",
+      "category": "Ketentuan Umum 6"
+    },
+    {
+      "title": "10. Ketentuan Umum 6.4.1 - 6.4.4",
+      "subtitle": "Impact Measurement: L1, L2, L3 & Pelaporan",
+      "icon": "rule",
+      "duration": "01:00",
+      "category": "Ketentuan Umum 6"
+    },
+    {
+      "title": "11. Dokumen Terkait",
+      "subtitle": "4 Prosedur Integrasi Sistem PTPP",
+      "icon": "attachment",
+      "duration": "00:40",
+      "category": "Dokumen Terkait"
+    },
+    {
+      "title": "12. Record",
+      "subtitle": "18 Dokumen Rekaman Bukti Kerja Terstandar",
+      "icon": "inventory_2",
+      "duration": "00:45",
+      "category": "Record"
+    },
+    {
+      "title": "13. Lampiran",
+      "subtitle": "11 Formulir Standar Pelatihan",
+      "icon": "folder_shared",
+      "duration": "00:45",
+      "category": "Lampiran"
+    },
+    {
+      "title": "14. Performance Measurement",
+      "subtitle": "Tujuan, Metrik & Target Ambang Batas",
+      "icon": "speed",
+      "duration": "00:45",
+      "category": "Performance Measurement"
+    },
+    {
+      "title": "15. Identifikasi Potential Risk",
+      "subtitle": "Analisis Titik Kritis & Mitigasi SOP",
+      "icon": "warning",
+      "duration": "00:45",
+      "category": "Identifikasi Potential Risk"
+    },
+    {
+      "title": "16. Kuis 10 Soal",
+      "subtitle": "Uji Pemahaman Terintegrasi Google Form",
+      "icon": "quiz",
+      "duration": "03:00",
+      "category": "Kuis 10 Soal"
+    },
+    {
+      "title": "17. Penutup",
+      "subtitle": "Rangkuman, Ketuntasan & Komitmen Pembelajaran",
+      "icon": "workspace_premium",
+      "duration": "00:35",
+      "category": "Penutup"
+    }
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "category": "Pendahuluan",
+      "title": "Pendahuluan",
+      "heroTitle": "Work Instruction Pelatihan PT PP (Persero) Tbk",
+      "heroLead": "Pedoman komprehensif rantai proses pembelajaran korporat (Learning Value Chain): mulai dari Diagnostic kebutuhan, Design & Development, Delivery terintegrasi LMS, hingga Evaluasi 3 Level.",
+      "heroMeta": "PP/SOP/E3-029 · REV-2 · Berlaku 20 Mei 2024",
+      "ctaLabel": "Mulai Pembelajaran",
+      "ctaIcon": "play_arrow",
+      "skipTo": 1,
+      "reasons": [
+        {
+          "icon": "sync_alt",
+          "title": "Perubahan Judul Dokumen",
+          "desc": "Mengubah judul prosedur menjadi WI Pelatihan PP/SOP/E3-029 REV-2."
+        },
+        {
+          "icon": "stars",
+          "title": "Inisiatif Core Competency",
+          "desc": "Implementasi Prioritas Core Competency BUMN Karya pada kurikulum prioritas PP Group."
+        },
+        {
+          "icon": "devices",
+          "title": "Integrasi Sistem LMS",
+          "desc": "Penyesuaian alur proses dengan Learning Management System (LMS) SiaPP & SuccessFactors."
+        },
+        {
+          "icon": "badge",
+          "title": "Penguatan Peran HCBP",
+          "desc": "Penambahan peran Human Capital Business Partner (HCBP) Manager dalam pendampingan TNA unit."
+        }
+      ]
+    },
+    {
+      "type": "cardList",
+      "category": "Maksud & Tujuan",
+      "title": "Maksud, Tujuan & Ruang Lingkup Pelatihan",
+      "lead": "Landasan strategis pelaksanaan pengembangan kompetensi seluruh insan PP Group.",
+      "columns": 2,
+      "cards": [
+        {
+          "icon": "verified",
+          "title": "Maksud Penyusunan WI",
+          "desc": "Sebagai acuan pengembangan dan pelaksanaan program pelatihan di PT PP (Persero) Tbk serta pedoman bagi Anak Perusahaan, Cucu Perusahaan, dan Afiliasi.",
+          "tags": [
+            "Acuan Induk",
+            "Pedoman Anak Perusahaan"
+          ]
+        },
+        {
+          "icon": "track_changes",
+          "title": "7 Tujuan Program Pelatihan",
+          "desc": "1. Memenuhi syarat kompetensi jabatan\n2. Meningkatkan produktivitas\n3. Memperbaiki kualitas produk/jasa\n4. Meningkatkan kinerja\n5. Engagement & retensi\n6. Transfer keahlian & kaderisasi\n7. Pencapaian kinerja Perusahaan.",
+          "tags": [
+            "Kompetensi",
+            "Produktivitas",
+            "Kaderisasi"
+          ]
+        },
+        {
+          "icon": "category",
+          "title": "4 Kategori Program Pelatihan",
+          "desc": "Onboarding (karyawan baru/promosi), Refreshment (awareness/sosialisasi berkala), Reinforcement (kompetensi spesifik fungsi), dan MDP (Management Development Program untuk suksesi).",
+          "tags": [
+            "Onboarding",
+            "Refreshment",
+            "Reinforcement",
+            "MDP"
+          ]
+        },
+        {
+          "icon": "family_restroom",
+          "title": "Prinsip Sinergi Parenting HCM",
+          "desc": "UNIFORM: Metodologi & format asesmen terstandar dari Induk.\nUNITY: Pengembangan kurikulum/silabus selaras panduan Induk.\nUNIQUE: Pelatihan kekhususan unit bisnis Anak Perusahaan dilaporkan ke Induk.",
+          "tags": [
+            "Uniform",
+            "Unity",
+            "Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cardList",
+      "category": "Referensi",
+      "title": "Referensi & Landasan Kebijakan",
+      "lead": "Standar internasional ISO dan kepatuhan internal yang melandasi prosedur pelatihan.",
+      "columns": 2,
+      "cards": [
+        {
+          "icon": "verified_user",
+          "title": "7 Standar Sistem Manajemen ISO",
+          "desc": "ISO 9001 (Mutu), ISO 14001 (Lingkungan), ISO 19650 (BIM), ISO 21500 (Project Management), ISO 27001 (Keamanan Informasi), ISO 37001 (Anti Penyuapan), dan ISO 45001 (K3).",
+          "tags": [
+            "ISO 9001",
+            "ISO 14001",
+            "ISO 19650",
+            "ISO 21500",
+            "ISO 27001",
+            "ISO 37001",
+            "ISO 45001"
+          ]
+        },
+        {
+          "icon": "gavel",
+          "title": "Regulasi & Kebijakan Internal PTPP",
+          "desc": "Buku Saku Peraturan Kepegawaian PTPP, Pedoman Good Corporate Governance (GCG), Kode Etik Perusahaan (Code of Conduct), dan SK Direksi No. 228/SK/PP/DIR/2020 tentang Sistem Parenting HCM.",
+          "tags": [
+            "Peraturan Kepegawaian",
+            "GCG",
+            "Code of Conduct",
+            "Parenting HCM"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "treeCanvas",
+      "category": "Alur 5.1 (Diagnostic)",
+      "title": "Alur Proses 5.1: Learning Needs Diagnostic",
+      "lead": "Diagnosis kebutuhan pembelajaran jangka panjang & tahunan berbasis VRIO, SKKNI dan TNA.",
+      "swimlaneData": [
+        {
+          "section": "Fase Diagnostic (CCA, DNA, TNA)",
+          "sectionIcon": "schema",
+          "items": [
+            {
+              "id": "node_51_1",
+              "step": "5.1.1",
+              "actor": "Dept HCCL & HCTM",
+              "actorRole": "Dept HCCL & HCTM",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Identifikasi Kompetensi Internal Jangka Panjang",
+              "inputs": [
+                "Rencana Jangka Panjang Perusahaan (RJPP)"
+              ],
+              "outputs": [
+                "Learning Blueprint"
+              ],
+              "clauses": [
+                "Melakukan kajian kompetensi inti perusahaan jangka panjang melalui analisis VRIO (valuable, rare, inimitable, organization) atau Focus Group Discussion (FGD). Menghasilkan Learning Blueprint bila tidak ada perubahan RJPP."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_51_2",
+              "step": "5.1.2",
+              "actor": "All Unit & Proyek",
+              "actorRole": "All Unit & Proyek",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Menganalisis Gap Kinerja & Isi Form TNA",
+              "inputs": [
+                "KPI Perusahaan & KPI Unit Triwulan IV"
+              ],
+              "outputs": [
+                "Form TNA Unit (Lampiran 6)"
+              ],
+              "clauses": [
+                "Seluruh unit bisnis dan proyek melakukan asesmen kesenjangan kinerja korporat dan unit, didampingi oleh HCBP Manager, lalu mengisi Form TNA Unit pada triwulan IV."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_51_3",
+              "step": "5.1.3",
+              "actor": "Dept HCCL & HCTM",
+              "actorRole": "Dept HCCL & HCTM",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Identifikasi Kebutuhan via Kamus Kompetensi & SKKNI",
+              "inputs": [
+                "Kamus Kompetensi PT PP & SKKNI"
+              ],
+              "outputs": [
+                "Learning Path"
+              ],
+              "clauses": [
+                "Mengidentifikasi kebutuhan pengembangan untuk fungsi tertentu (keuangan, manajemen proyek, dll) berdasarkan klasifikasi Job Family, menghasilkan dokumen Learning Path."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_51_4",
+              "step": "5.1.4",
+              "actor": "Dept HCCL",
+              "actorRole": "Dept HCCL",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Menganalisis & Validasi Kebutuhan Pelatihan",
+              "inputs": [
+                "Learning Blueprint + Learning Path + Form TNA"
+              ],
+              "outputs": [
+                "Daftar Usulan Kebutuhan Pelatihan Tervalidasi"
+              ],
+              "clauses": [
+                "Dept HCCL mengintegrasikan seluruh masukan kebutuhan, memvalidasi gap prioritas, dan menyelaraskan dengan arah strategi bisnis perusahaan."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_51_5",
+              "step": "5.1.5",
+              "actor": "Dept HCCL & Direksi",
+              "actorRole": "Dept HCCL & Direksi",
+              "actorColor": "bg-amber-500 text-white",
+              "title": "Approval Kebutuhan & Penyusunan Development Plan",
+              "inputs": [
+                "Usulan Kebutuhan Pelatihan"
+              ],
+              "outputs": [
+                "Rencana Program Pengembangan (Development Plan)"
+              ],
+              "clauses": [
+                "Direksi melakukan approval atas usulan kebutuhan pelatihan. Dept HCCL merumuskan Rencana Program Pengembangan (Development Plan) tahunan pada Triwulan I tahun berikutnya."
+              ],
+              "isDecision": true
+            }
+          ]
+        }
+      ],
+      "flowCard": {
+        "node_51_1": {
+          "t": "Identifikasi Kompetensi Internal Jangka Panjang",
+          "out": "Learning Blueprint"
+        },
+        "node_51_2": {
+          "t": "Menganalisis Gap Kinerja & Isi Form TNA",
+          "out": "Form TNA Unit (Lampiran 6)"
+        },
+        "node_51_3": {
+          "t": "Identifikasi Kebutuhan via Kamus Kompetensi & SKKNI",
+          "out": "Learning Path"
+        },
+        "node_51_4": {
+          "t": "Menganalisis & Validasi Kebutuhan Pelatihan",
+          "out": "Daftar Usulan Kebutuhan Pelatihan Tervalidasi"
+        },
+        "node_51_5": {
+          "t": "Approval Kebutuhan & Penyusunan Development Plan",
+          "out": "Rencana Program Pengembangan (Development Plan)"
+        }
+      },
+      "roleFilterOptions": [
+        "Semua",
+        "Dept HCCL & HCTM",
+        "All Unit & Proyek",
+        "Dept HCCL",
+        "Dept HCCL & Direksi"
+      ]
+    },
+    {
+      "type": "treeCanvas",
+      "category": "Alur 5.2 (Desain)",
+      "title": "Alur Proses 5.2: Learning Design & Development",
+      "lead": "Perancangan kurikulum, penunjukan pengajar pool expert, kalender pelatihan dan modul.",
+      "swimlaneData": [
+        {
+          "section": "Fase Perancangan & Kurikulum",
+          "sectionIcon": "architecture",
+          "items": [
+            {
+              "id": "node_52d_1",
+              "step": "5.2.1",
+              "actor": "Dept HCCL, HCTM & HCBP",
+              "actorRole": "Dept HCCL, HCTM & HCBP",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Menetapkan Topik & Target Sasaran Peserta",
+              "inputs": [
+                "Development Plan"
+              ],
+              "outputs": [
+                "Topik Pelatihan & Matriks Target Peserta"
+              ],
+              "clauses": [
+                "Menetapkan topik bersama Business Process Owner (BPO) dan Expert, serta memetakan target peserta berdasarkan band jabatan, job family, dan fungsi."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_52d_2",
+              "step": "5.2.2",
+              "actor": "Dept HCCL, BPO & Expert",
+              "actorRole": "Dept HCCL, BPO & Expert",
+              "actorColor": "bg-amber-500 text-white",
+              "title": "Menetapkan Pengajar (Internal / Eksternal)",
+              "inputs": [
+                "Expert Pool Database & Kajian Vendor"
+              ],
+              "outputs": [
+                "Surat Penugasan / SPK Pelatihan"
+              ],
+              "clauses": [
+                "Memilih pengajar internal dari Expert Pool PT PP (diterbitkan Memo Penugasan) atau bekerjasama dengan lembaga eksternal profesional via seleksi reputasi & biaya (diterbitkan SPK)."
+              ],
+              "isDecision": true
+            },
+            {
+              "id": "node_52d_3",
+              "step": "5.2.3",
+              "actor": "Dept HCCL",
+              "actorRole": "Dept HCCL",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Menetapkan Metode, Jadwal & Anggaran",
+              "inputs": [
+                "Rencana Anggaran RKAP"
+              ],
+              "outputs": [
+                "Kalender Kegiatan Pelatihan"
+              ],
+              "clauses": [
+                "Menentukan metode (self-learning, online, onsite, blended), jadwal pada Kalender Pelatihan, dan pembebanan biaya jika melibatkan Divisi Operasi dan Anak Perusahaan."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_52d_4",
+              "step": "5.2.4",
+              "actor": "Dept HCCL, BPO & Expert",
+              "actorRole": "Dept HCCL, BPO & Expert",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Pembuatan Modul & Persiapan Fasilitas (K3L)",
+              "inputs": [
+                "Silabus & Materi Baku"
+              ],
+              "outputs": [
+                "Modul Pelatihan & Kesiapan Ruang/Platform"
+              ],
+              "clauses": [
+                "Menyusun modul pelatihan dan konten LMS. Untuk sesi offline di PP University atau lokasi lain, wajib memastikan seluruh sarana menerapkan prinsip K3L secara ketat."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_52d_5",
+              "step": "5.2.5",
+              "actor": "Dept HCCL",
+              "actorRole": "Dept HCCL",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Menetapkan Bentuk & Instrumen Evaluasi",
+              "inputs": [
+                "Tujuan Pembelajaran"
+              ],
+              "outputs": [
+                "Formulir Evaluasi L1, Pre/Post-Test L2 & Review L3"
+              ],
+              "clauses": [
+                "Menyiapkan instrumen evaluasi kepuasan peserta (Level 1), soal pre-test dan post-test beserta Nilai Minimum Kelulusan / NMK (Level 2), dan kuesioner evaluasi atasan (Level 3)."
+              ],
+              "isDecision": false
+            }
+          ]
+        }
+      ],
+      "flowCard": {
+        "node_52d_1": {
+          "t": "Menetapkan Topik & Target Sasaran Peserta",
+          "out": "Topik Pelatihan & Matriks Target Peserta"
+        },
+        "node_52d_2": {
+          "t": "Menetapkan Pengajar (Internal / Eksternal)",
+          "out": "Surat Penugasan / SPK Pelatihan"
+        },
+        "node_52d_3": {
+          "t": "Menetapkan Metode, Jadwal & Anggaran",
+          "out": "Kalender Kegiatan Pelatihan"
+        },
+        "node_52d_4": {
+          "t": "Pembuatan Modul & Persiapan Fasilitas (K3L)",
+          "out": "Modul Pelatihan & Kesiapan Ruang/Platform"
+        },
+        "node_52d_5": {
+          "t": "Menetapkan Bentuk & Instrumen Evaluasi",
+          "out": "Formulir Evaluasi L1, Pre/Post-Test L2 & Review L3"
+        }
+      },
+      "roleFilterOptions": [
+        "Semua",
+        "Dept HCCL, HCTM & HCBP",
+        "Dept HCCL, BPO & Expert",
+        "Dept HCCL"
+      ]
+    },
+    {
+      "type": "treeCanvas",
+      "category": "Alur 5.2 (Delivery)",
+      "title": "Alur Proses 5.2: Learning Delivery & Deployment",
+      "lead": "Penyelenggaraan pelatihan melalui LMS SiaPP (Assignment) atau Pengajuan Mandiri.",
+      "swimlaneData": [
+        {
+          "section": "Fase Eksekusi & Penyelenggaraan",
+          "sectionIcon": "school",
+          "items": [
+            {
+              "id": "node_52dl_1",
+              "step": "5.2.6",
+              "actor": "Dept HCCL",
+              "actorRole": "Dept HCCL",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Persiapan Pelaksanaan & Skema Pendaftaran",
+              "inputs": [
+                "Kalender Pelatihan & Modul"
+              ],
+              "outputs": [
+                "Undangan Pelatihan / Assignment LMS"
+              ],
+              "clauses": [
+                "Mempersiapkan kelas di LMS. Membagi jalur keikutsertaan: Jalur Assignment (penugasan langsung oleh Learning Administrator) atau Jalur Pengajuan Mandiri oleh pegawai."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_52dl_2",
+              "step": "5.2.7",
+              "actor": "Pegawai & Atasan",
+              "actorRole": "Pegawai & Atasan",
+              "actorColor": "bg-amber-500 text-white",
+              "title": "Proses Approval & Assignment Pelatihan",
+              "inputs": [
+                "Form Pengajuan / Notifikasi LMS"
+              ],
+              "outputs": [
+                "Persetujuan Ikut Serta"
+              ],
+              "clauses": [
+                "Untuk penugasan mandiri, pegawai mengajukan permohonan di LMS dan memerlukan approval atasan langsung/HCBP. Pada jalur assignment, sistem otomatis mengirimkan jadwal reminder."
+              ],
+              "isDecision": true
+            },
+            {
+              "id": "node_52dl_3",
+              "step": "5.2.8",
+              "actor": "Peserta (All Unit)",
+              "actorRole": "Peserta (All Unit)",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Pelaksanaan Kegiatan Pelatihan",
+              "inputs": [
+                "Konten LMS / Sesi Kelas"
+              ],
+              "outputs": [
+                "Daftar Hadir & Submit Evidence LMS"
+              ],
+              "clauses": [
+                "Peserta mengikuti pembelajaran inhouse/public (online class, onsite di PP University, atau blended). Untuk public training mandiri, bukti keikutsertaan wajib di-submit di menu Learning History."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_52dl_4",
+              "step": "5.2.9",
+              "actor": "Dept HCCL & Direksi",
+              "actorRole": "Dept HCCL & Direksi",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Penyelesaian Administrasi & Pembayaran Biaya",
+              "inputs": [
+                "Form Honorarium / Invoice Vendor"
+              ],
+              "outputs": [
+                "Bukti Pembayaran & Realisasi Anggaran"
+              ],
+              "clauses": [
+                "Melakukan verifikasi honorarium pengajar internal/eksternal inhouse, atau pembayaran invoice lembaga public training sesuai ketentuan finansial yang berlaku."
+              ],
+              "isDecision": false
+            }
+          ]
+        }
+      ],
+      "flowCard": {
+        "node_52dl_1": {
+          "t": "Persiapan Pelaksanaan & Skema Pendaftaran",
+          "out": "Undangan Pelatihan / Assignment LMS"
+        },
+        "node_52dl_2": {
+          "t": "Proses Approval & Assignment Pelatihan",
+          "out": "Persetujuan Ikut Serta"
+        },
+        "node_52dl_3": {
+          "t": "Pelaksanaan Kegiatan Pelatihan",
+          "out": "Daftar Hadir & Submit Evidence LMS"
+        },
+        "node_52dl_4": {
+          "t": "Penyelesaian Administrasi & Pembayaran Biaya",
+          "out": "Bukti Pembayaran & Realisasi Anggaran"
+        }
+      },
+      "roleFilterOptions": [
+        "Semua",
+        "Dept HCCL",
+        "Pegawai & Atasan",
+        "Peserta (All Unit)",
+        "Dept HCCL & Direksi"
+      ]
+    },
+    {
+      "type": "treeCanvas",
+      "category": "Alur 5.4 (Evaluasi)",
+      "title": "Alur Proses 5.4: Learning Impact Measurement",
+      "lead": "Pengukuran efektivitas 3 level: reaksi peserta, serapan pengetahuan dan dampak perilaku.",
+      "swimlaneData": [
+        {
+          "section": "Fase Evaluasi & Continuous Improvement",
+          "sectionIcon": "bar_chart",
+          "items": [
+            {
+              "id": "node_54_1",
+              "step": "5.4.1",
+              "actor": "Dept HCCL",
+              "actorRole": "Dept HCCL",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Penerbitan Instrumen Evaluasi di LMS",
+              "inputs": [
+                "Development Plan & Bank Soal"
+              ],
+              "outputs": [
+                "Form Level 1, Pre/Post-Test L2 & Form L3"
+              ],
+              "clauses": [
+                "Membuat form kuesioner evaluasi Level 1, soal evaluasi pemahaman Level 2 (pre-test dan post-test), serta form evaluasi perilaku Level 3 di sistem LMS SiaPP."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_54_2",
+              "step": "5.4.2",
+              "actor": "Peserta Pelatihan",
+              "actorRole": "Peserta Pelatihan",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Pengisian Evaluasi Level 1 (Reaksi)",
+              "inputs": [
+                "Kuesioner LMS"
+              ],
+              "outputs": [
+                "Report Evaluasi Level 1 (Kepuasan)"
+              ],
+              "clauses": [
+                "Peserta mengisi evaluasi kepuasan terhadap materi, trainer, dan sarana pelatihan maksimal 1x24 jam pasca pelatihan melalui menu My Learning Assignments."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_54_3",
+              "step": "5.4.3",
+              "actor": "Peserta Pelatihan",
+              "actorRole": "Peserta Pelatihan",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Pengerjaan Pre-Test & Post-Test (Level 2)",
+              "inputs": [
+                "Lembar Ujian LMS"
+              ],
+              "outputs": [
+                "Report Gain Score & Kelulusan NMK"
+              ],
+              "clauses": [
+                "Mengukur pemahaman aspek pengetahuan via Post-Test dalam 1x24 jam. Kenaikan skor dibandingkan Pre-Test menjadi Gain Score. Nilai harus memenuhi Nilai Minimum Kelulusan."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_54_4",
+              "step": "5.4.4",
+              "actor": "Atasan Peserta",
+              "actorRole": "Atasan Peserta",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Evaluasi Perilaku Level 3 (Pasca 90 Hari)",
+              "inputs": [
+                "Follow-up Survey LMS"
+              ],
+              "outputs": [
+                "Report Evaluasi Perilaku Kerja"
+              ],
+              "clauses": [
+                "Atasan langsung peserta mengisi evaluasi Level 3 di LMS setelah 3x30 hari (90 hari) masa kerja untuk mengukur apakah materi pelatihan benar-benar diterapkan pada pekerjaan sehari-hari."
+              ],
+              "isDecision": false
+            },
+            {
+              "id": "node_54_5",
+              "step": "5.4.5",
+              "actor": "Dept HCCL",
+              "actorRole": "Dept HCCL",
+              "actorColor": "bg-brand-primary text-white",
+              "title": "Analisis Hasil & Improvement Berkelanjutan",
+              "inputs": [
+                "Rekap Laporan Level 1, 2, dan 3"
+              ],
+              "outputs": [
+                "Laporan Evaluasi & Rekomendasi Perbaikan"
+              ],
+              "clauses": [
+                "Dept HCCL menganalisis hasil evaluasi menyeluruh untuk melakukan continuous improvement pada kurikulum, materi, trainer, dan metode pelatihan periode berikutnya."
+              ],
+              "isDecision": false
+            }
+          ]
+        }
+      ],
+      "flowCard": {
+        "node_54_1": {
+          "t": "Penerbitan Instrumen Evaluasi di LMS",
+          "out": "Form Level 1, Pre/Post-Test L2 & Form L3"
+        },
+        "node_54_2": {
+          "t": "Pengisian Evaluasi Level 1 (Reaksi)",
+          "out": "Report Evaluasi Level 1 (Kepuasan)"
+        },
+        "node_54_3": {
+          "t": "Pengerjaan Pre-Test & Post-Test (Level 2)",
+          "out": "Report Gain Score & Kelulusan NMK"
+        },
+        "node_54_4": {
+          "t": "Evaluasi Perilaku Level 3 (Pasca 90 Hari)",
+          "out": "Report Evaluasi Perilaku Kerja"
+        },
+        "node_54_5": {
+          "t": "Analisis Hasil & Improvement Berkelanjutan",
+          "out": "Laporan Evaluasi & Rekomendasi Perbaikan"
+        }
+      },
+      "roleFilterOptions": [
+        "Semua",
+        "Dept HCCL",
+        "Peserta Pelatihan",
+        "Atasan Peserta"
+      ]
+    },
+    {
+      "type": "cardList",
+      "category": "Klausul 6.1",
+      "title": "Ketentuan Umum 6.1: Learning Needs Diagnostic",
+      "lead": "Pedoman pelaksanaan 3 pilar analisis kebutuhan: CCA, DNA, dan TNA.",
+      "columns": 1,
+      "cards": [
+        {
+          "icon": "psychology",
+          "title": "6.1.1 Core Competency Analysis (CCA)",
+          "desc": "Kajian identifikasi kompetensi inti perusahaan jangka panjang melalui analisis VRIO (valuable, rare, inimitable, organization) atau FGD. Dilakukan apabila terjadi perubahan strategi pada RJPP, menghasilkan dokumen Learning Blueprint.",
+          "tags": [
+            "VRIO",
+            "RJPP",
+            "Learning Blueprint"
+          ]
+        },
+        {
+          "icon": "work_outline",
+          "title": "6.1.2 Development Needs Analysis (DNA)",
+          "desc": "Kajian identifikasi kebutuhan pengembangan fungsi tertentu (keuangan, manajemen proyek, dll) jangka panjang via FGD. Dilakukan jika ada perubahan Kamus Kompetensi PT PP, SKKNI, dan/atau klasifikasi Job Family, menghasilkan Learning Path.",
+          "tags": [
+            "SKKNI",
+            "Job Family",
+            "Learning Path"
+          ]
+        },
+        {
+          "icon": "edit_note",
+          "title": "6.1.3 Training Need Analysis (TNA) & Peran HCBP",
+          "desc": "Menutup gap kompetensi jangka pendek berbasis KPI korporat dan unit kerja saat ini. Kuesioner Form TNA Unit disebarkan ke seluruh unit bisnis minimal 1 kali setahun pada Triwulan IV. HCBP Manager bertugas mendampingi analisis dan pengisian TNA seluruh fungsi Unit Divisi Operasi dan proyek.",
+          "tags": [
+            "Triwulan IV",
+            "Form TNA Unit",
+            "Pendampingan HCBP"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cardList",
+      "category": "Klausul 6.2",
+      "title": "Ketentuan Umum 6.2: Learning Design & Development",
+      "lead": "6 elemen rancangan pembelajaran: Topik, Peserta, Partnership, Delivery, Evaluasi & Finansial.",
+      "columns": 2,
+      "cards": [
+        {
+          "icon": "topic",
+          "title": "6.2.1 Penetapan Topik Pelatihan",
+          "desc": "Ditetapkan oleh Dept. HCCL bersama Business Process Owner (BPO) dan Expert sesuai kebutuhan yang disepakati.",
+          "tags": [
+            "BPO",
+            "Expert Pool"
+          ]
+        },
+        {
+          "icon": "group",
+          "title": "6.2.2 Sasaran Target Peserta",
+          "desc": "Disesuaikan dengan band jabatan, job family, unit kerja, fungsi, dan status kepegawaian peserta.",
+          "tags": [
+            "Band Jabatan",
+            "Job Family"
+          ]
+        },
+        {
+          "icon": "handshake",
+          "title": "6.2.3 Partnership Pengajar",
+          "desc": "Pengajar internal dari Expert Pool PTPP. Pengajar eksternal diseleksi berdasarkan reputasi dan mengacu SOP Pengadaan Barang & Jasa (PP/DIVOC&SCM/P/031).",
+          "tags": [
+            "Expert Pool",
+            "Vendor Pengadaan"
+          ]
+        },
+        {
+          "icon": "health_and_safety",
+          "title": "6.2.4 Delivery & Standar K3L",
+          "desc": "Metode self-learning, online (LMS SiaPP), atau onsite di PP University dengan kewajiban menerapkan prinsip K3L secara penuh.",
+          "tags": [
+            "LMS SiaPP",
+            "PP University",
+            "Standar K3L"
+          ]
+        },
+        {
+          "icon": "fact_check",
+          "title": "6.2.5 Rencana Evaluasi 3 Level",
+          "desc": "Level 1 kepuasan, Level 2 post-test dengan Nilai Minimum Kelulusan (NMK), dan Level 3 review perilaku kerja atasan.",
+          "tags": [
+            "Level 1",
+            "Level 2 NMK",
+            "Level 3"
+          ]
+        },
+        {
+          "icon": "payments",
+          "title": "6.2.6 Model Anggaran Finansial",
+          "desc": "Anggaran in-house dan public training mengacu RKAP, memetakan mekanisme pembebanan biaya lintas Divisi Operasi dan Anak Perusahaan.",
+          "tags": [
+            "RKAP",
+            "Cost Sharing"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cardList",
+      "category": "Klausul 6.3",
+      "title": "Ketentuan Umum 6.3: Learning Delivery & Deployment",
+      "lead": "Operasional LMS SiaPP, In-House, Public Training & Akumulasi Learning Agility.",
+      "columns": 2,
+      "cards": [
+        {
+          "icon": "laptop_chromebook",
+          "title": "6.3.1 Operasional LMS SiaPP",
+          "desc": "Diakses via hcm44.sapsf.com (company id: ptpembangu) atau SAP SuccessFactors mobile. Dikelola Learning Administrator. Sertifikat dan Learning Point otomatis terbit setelah lulus passing grade dan menyelesaikan survey kepuasan.",
+          "tags": [
+            "SiaPP",
+            "SuccessFactors",
+            "E-Certificate"
+          ]
+        },
+        {
+          "icon": "meeting_room",
+          "title": "6.3.2 In-House Training",
+          "desc": "Program Refreshment, Reinforcement, MDP, dan Sertifikasi melalui penugasan LMS di menu My Learning Assignments dengan alur registrasi & approval.",
+          "tags": [
+            "Assignment LMS",
+            "Approval Atasan"
+          ]
+        },
+        {
+          "icon": "school",
+          "title": "6.3.3 Public Training",
+          "desc": "Mengacu TNA Individu dan persetujuan SM-HCCL. Bukti keikutsertaan disubmit di menu Learning History untuk dikonversi menjadi Learning Point.",
+          "tags": [
+            "Approval SM-HCCL",
+            "Learning History"
+          ]
+        },
+        {
+          "icon": "sports_score",
+          "title": "6.3.4 - 6.3.6 Agility & Hak Trainer",
+          "desc": "Penanggung jawab: SM-HCCL (Induk), Mgr-HCBP (Divisi), HC&GA Mgr (AP). Trainer berhak atas honorarium dan KC Point. Akumulasi Learning Point + KC Point menjadi nilai Learning Agility untuk KPI dan talent di ITMS.",
+          "tags": [
+            "Honorarium",
+            "KC Point",
+            "Learning Agility",
+            "ITMS"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cardList",
+      "category": "Klausul 6.4",
+      "title": "Ketentuan Umum 6.4: Learning Impact Measurement",
+      "lead": "Tata cara pelaksanaan evaluasi Level 1, 2, 3, Knowledge Sharing, dan pelaporan triwulanan.",
+      "columns": 2,
+      "cards": [
+        {
+          "icon": "sentiment_satisfied",
+          "title": "6.4.1 Evaluasi Level 1 (Reaction) — 1x24 Jam",
+          "desc": "Dilakukan di LMS menu My Learning Assignments. Mengukur kepuasan peserta terhadap materi, trainer, dan fasilitas pelatihan dalam waktu maksimal 1x24 jam pascapelatihan.",
+          "tags": [
+            "1x24 Jam",
+            "Kepuasan Peserta"
+          ]
+        },
+        {
+          "icon": "quiz",
+          "title": "6.4.2 Evaluasi Level 2 (Learning) & KS 30 Hari",
+          "desc": "Post-test di LMS untuk mengukur serapan pengetahuan & Gain Score. Khusus peserta public training berbiaya: wajib melaksanakan Knowledge Sharing ke rekan unit kerja maksimal 30 hari kalender.",
+          "tags": [
+            "Post-Test",
+            "Gain Score",
+            "Knowledge Sharing 30 Hari"
+          ]
+        },
+        {
+          "icon": "supervisor_account",
+          "title": "6.4.3 Evaluasi Level 3 (Behavior) — 90 Hari",
+          "desc": "Mengukur perubahan perilaku nyata yang berdampak pada kinerja kerja. Diisi oleh atasan langsung peserta melalui follow-up survey di LMS setelah 3x30 hari (90 hari) pascapelatihan.",
+          "tags": [
+            "90 Hari",
+            "Evaluasi Atasan",
+            "Dampak Perilaku"
+          ]
+        },
+        {
+          "icon": "summarize",
+          "title": "6.4.4 Pelaporan Berkala Triwulanan",
+          "desc": "Fasilitator pelatihan (HCM & Mgr-HCBP Divisi Operasi) wajib menyusun laporan hasil evaluasi pelatihan di unit masing-masing dan menyampaikannya ke Dept. HCCL tiap triwulan.",
+          "tags": [
+            "Laporan Triwulanan",
+            "Fasilitator HCM",
+            "HCBP"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "docTabs",
+      "category": "Poin 7",
+      "title": "Dokumen Terkait",
+      "lead": "Daftar 4 prosedur dan kebijakan sistem yang terintegrasi dengan Work Instruction ini.",
+      "tabs": [
+        {
+          "key": "kebijakan",
+          "label": "4 Prosedur Terkait",
+          "itemType": "list",
+          "items": [
+            "1. Program Pengembangan Pegawai (Divisi HCM) — Prosedur Program Pengembangan Pegawai [PP/DIVHCM/P/015]",
+            "2. Trainer Kegiatan Pelatihan (Divisi HCM) — Prosedur Pengelolaan Expert (Expert Pool Function) [PP/WI/E3-020]",
+            "3. Knowledge Management (Divisi HCM) — Prosedur Pengelolaan Pengetahuan [PP/DIVSTRATEK/P/004]",
+            "4. Pemilihan Rekanan Pelatihan (Divisi OC & SCM) — Prosedur Pengadaan Barang dan Jasa [PP/DIVOC&SCM/P/031]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "docTabs",
+      "category": "Poin 8",
+      "title": "Katalog Record Bukti Kerja (Poin 8)",
+      "lead": "18 berkas rekaman bukti kerja yang wajib disimpan dan dipelihara secara akuntabel.",
+      "tabs": [
+        {
+          "key": "record_all",
+          "label": "18 Dokumen Record",
+          "itemType": "records",
+          "items": [
+            "8.1 Kebutuhan Pelatihan (PIC: HCM, Media: Softcopy / Hardcopy)",
+            "8.2 Kebutuhan Pelatihan yang Telah Disetujui (PIC: HCM, Media: Softcopy / Hardcopy)",
+            "8.3 Form TNA Individu (PIC: HCBP, Media: Softcopy / Hardcopy)",
+            "8.4 Form TNA Unit (PIC: HCM & HCBP, Media: Softcopy / Hardcopy)",
+            "8.5 Kalender Pelatihan (PIC: HCBP & HC AP, Media: Softcopy / Hardcopy)",
+            "8.6 Memo / Surat Undangan Pelatihan (PIC: HCBP & HC AP, Media: Softcopy / Hardcopy)",
+            "8.7 Daftar Kehadiran Pelaksanaan Pelatihan (PIC: HCM, Media: Softcopy / Hardcopy)",
+            "8.8 Hasil Evaluasi Pelatihan (Level 1, 2, 3) (PIC: HCBP & HC AP, Media: Softcopy / Hardcopy)",
+            "8.9 Sertifikat Pelatihan (PIC: LMS, Media: Website / Softcopy)",
+            "8.10 Curriculum Vitae Pegawai (PIC: SiaPP, Media: Sistem SiaPP)",
+            "8.11 Dokumentasi Foto atau Video Kegiatan (PIC: HCM, Media: Softcopy / Cloud)",
+            "8.12 Surat Perintah Kerja (SPK) Vendor (PIC: HCM, Media: Softcopy / Hardcopy)",
+            "8.13 Modul Pelatihan (PIC: HCM, Media: Softcopy / Hardcopy)",
+            "8.14 Learning Point Pegawai (PIC: LMS, Media: Website LMS)",
+            "8.15 Learning History Pegawai (PIC: LMS, Media: Website LMS)",
+            "8.16 Invoice Public Training (PIC: HCM, Media: Softcopy / Hardcopy)",
+            "8.17 Report Kegiatan Pelatihan (PIC: HCM, Media: Softcopy / Hardcopy)",
+            "8.18 Hasil Analisis & Improvement Pelatihan (PIC: HCM, Media: Softcopy / Hardcopy)"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "docTabs",
+      "category": "Poin 9",
+      "title": "Katalog Formulir Lampiran (Poin 9)",
+      "lead": "11 formulir standar untuk operasional, evaluasi, dan rekapitulasi pelatihan.",
+      "tabs": [
+        {
+          "key": "lampiran_all",
+          "label": "11 Formulir Standar",
+          "itemType": "attachments",
+          "items": [
+            "9.1 [Lamp. 1] Skema Program Pengembangan — Arsitektur roadmap pengembangan kompetensi PTPP",
+            "9.2 [Lamp. 2] Form Undangan Pelatihan — Format baku pemanggilan peserta pelatihan resmi",
+            "9.3 [Lamp. 3] Daftar Hadir Pelatihan — Format presensi kehadiran sesi in-house tatap muka / online",
+            "9.4 [Lamp. 4] Contoh Sertifikat Pelatihan — Standar template sertifikat kelulusan elektronik resmi PTPP",
+            "9.5 [Lamp. 5] Form Pengisian TNA Individu — Formulir asesmen kebutuhan pengembangan mandiri pegawai",
+            "9.6 [Lamp. 6] Form Pengisian TNA Unit — Formulir pemetaan kebutuhan pelatihan level unit & proyek (TW IV)",
+            "9.7 [Lamp. 7] Contoh Kalender Pelatihan — Jadwal matriks penyelenggaraan in-house training tahunan",
+            "9.8 [Lamp. 8] Form Evaluasi Level 1 (Reaction) — Instrumen kuesioner kepuasan materi, trainer & fasilitas",
+            "9.9 [Lamp. 9] Form Evaluasi Level 2 (Learning) — Format evaluasi serapan pengetahuan & Gain Score pre/post-test",
+            "9.10 [Lamp. 10] Form Evaluasi Level 3 (Behavior) — Instrumen follow-up survey atasan pasca 90 hari pelatihan",
+            "9.11 [Lamp. 11] Formulir Pencatatan Learning Point — Format akumulasi poin keikutsertaan & kontribusi Learning Agility"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "kpiDashboard",
+      "category": "Poin 10",
+      "title": "Performance Measurement (Poin 10)",
+      "lead": "Indikator kunci keberhasilan efektivitas dan dampak pelatihan insan PTPP.",
+      "kpis": [
+        {
+          "label": "Kepuasan Peserta (L1)",
+          "value": "Sesuai KPI",
+          "target": "Tinggi",
+          "desc": "Rata-rata kepuasan terhadap materi, trainer, dan sarana pelatihan.",
+          "icon": "sentiment_satisfied"
+        },
+        {
+          "label": "Gain Score (L2)",
+          "value": "> 80%",
+          "target": "> 80% Peserta",
+          "desc": "Persentase peserta mengalami peningkatan nilai pre/post-test (>70% Tinggi).",
+          "icon": "trending_up"
+        },
+        {
+          "label": "Tingkat Kehadiran",
+          "value": "≥ 70%",
+          "target": "≥ 70%",
+          "desc": "Keikutsertaan penuh durasi waktu di setiap sesi pembelajaran.",
+          "icon": "how_to_reg"
+        }
+      ],
+      "auditChecklist": [
+        {
+          "id": "pm_1",
+          "label": "Evaluasi Level 1 (Reaction) disubmit peserta dalam 1x24 jam"
+        },
+        {
+          "id": "pm_2",
+          "label": "Post-Test Level 2 memenuhi Nilai Minimum Kelulusan (NMK)"
+        },
+        {
+          "id": "pm_3",
+          "label": "Knowledge Sharing public training dilaksanakan maksimal 30 hari"
+        },
+        {
+          "id": "pm_4",
+          "label": "Evaluasi Level 3 (Behavior) diisi atasan setelah 90 hari"
+        },
+        {
+          "id": "pm_5",
+          "label": "Presensi kehadiran peserta tercapai minimal 70% per program"
+        }
+      ]
+    },
+    {
+      "type": "riskCards",
+      "category": "Poin 11",
+      "title": "Identifikasi Potensi Risiko & Mitigasi (Poin 11)",
+      "lead": "Manajemen risiko terintegrasi untuk mencegah kegagalan pencapaian sasaran pembelajaran.",
+      "risks": [
+        {
+          "no": "6.1.3",
+          "proc": "Tahap Diagnostic: Pelaksanaan TNA Unit Bisnis & Proyek",
+          "risk": "Kesulitan dalam mengimplementasikan program pelatihan; materi tidak efektif memberikan hasil kompetensi yang diinginkan.",
+          "mit": "Pendampingan intensif HCBP Manager, keterlibatan BPO & Expert Pool dalam penyusunan silabus, serta monitoring berkala 3 level evaluasi."
+        },
+        {
+          "no": "6.2.1",
+          "proc": "Tahap Design: Penetapan Topik & Sasaran Pelatihan",
+          "risk": "Kesulitan dalam memilih program pelatihan yang tepat akibat banyaknya opsi program yang tersedia di pasar.",
+          "mit": "Penetapan topik wajib didasarkan pada TNA terstruktur berbasis KPI & Kamus Kompetensi, serta alignment program antara Induk dan Anak Perusahaan."
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "category": "Evaluasi Kuis",
+      "title": "Evaluasi Pemahaman (Level 2)",
+      "lead": "Passing grade minimal 80. Kesempatan pengerjaan maksimal 5 kali.",
+      "askParticipantInfo": true,
+      "webhookUrl": "https://script.google.com/macros/s/AKfycbyjbQGeDAht8zi62giuBvkRH5eiQLpD-lvQkP5xB4ibor6aMu25yZsm5JyvTN_HrdL0/exec",
+      "questions": [
+        {
+          "id": 1,
+          "type": "mcq",
+          "question": "[C2] Dalam tahap Learning Needs Diagnostic (LND), Departemen HC Corporate Learning menyusun analisis kebutuhan pengembangan jangka panjang perusahaan. Perbedaan mendasar antara Core Competency Analysis (CCA) dan Development Needs Analysis (DNA) adalah...",
+          "options": [
+            "CCA berfokus pada pemenuhan gap kinerja tahunan unit, sedangkan DNA berfokus pada pemenuhan sasaran Key Performance Indicator (KPI) korporat.",
+            "CCA menghasilkan Learning Blueprint berdasarkan tinjauan RJPP, sedangkan DNA menghasilkan Learning Path berdasarkan Kamus Kompetensi, SKKNI, atau Job Family.",
+            "CCA digunakan khusus untuk kebutuhan sertifikasi eksternal, sedangkan DNA digunakan untuk penyusunan form TNA individu pegawai.",
+            "CCA dilaksanakan secara rutin setiap triwulan IV, sedangkan DNA hanya dilaksanakan apabila ada permintaan khusus dari Direksi.",
+            "CCA menghasilkan silabus pelatihan spesifik fungsi, sedangkan DNA menghasilkan materi pre-test dan post-test untuk LMS."
+          ],
+          "correctIndex": 1,
+          "explanation": "Jawaban yang tepat adalah opsi ke-2 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 2,
+          "type": "mcq",
+          "question": "[C2] Berdasarkan ketentuan tata kelola pengembangan kompetensi di PT PP, nilai Learning Agility pegawai dihitung dan diakumulasikan dari penggabungan dua metrik utama, yaitu...",
+          "options": [
+            "Nilai evaluasi KPI tahunan dan nilai kelulusan passing grade (NMK).",
+            "Persentase kehadiran kelas tatap muka dan perolehan sertifikat keahlian.",
+            "Learning Point dari keikutsertaan program pengembangan dan Knowledge Center (KC) Point dari aktivitas knowledge sharing.",
+            "Skor evaluasi reaksi Level 1 dan nilai evaluasi dampak perilaku Level 3.",
+            "Jumlah jam belajar mandiri di LMS dan riwayat pengajuan pelatihan mandiri."
+          ],
+          "correctIndex": 2,
+          "explanation": "Jawaban yang tepat adalah opsi ke-3 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 3,
+          "type": "mcq",
+          "question": "[C2] Seorang fasilitator pelatihan merancang instrumen evaluasi efektivitas pelatihan berjenjang mengacu pada model evaluasi yang diatur dalam instruksi kerja. Pernyataan yang paling tepat mengenai fokus pengukuran instrumen evaluasi Level 2 adalah...",
+          "options": [
+            "Mengukur tingkat kepuasan peserta terhadap pemateri, materi, dan kenyamanan fasilitas penyelenggaraan.",
+            "Menilai perubahan perilaku kerja dan peningkatan kinerja peserta di unit kerja masing-masing pascapelatihan.",
+            "Menghitung tingkat pengembalian investasi finansial program pelatihan terhadap pendapatan laba unit kerja.",
+            "Mengukur capaian peningkatan pemahaman pengetahuan (learning gain) peserta melalui pemberian pre-test dan post-test.",
+            "Mengidentifikasi kendala penerapan materi yang dihadapi atasan langsung peserta di proyek."
+          ],
+          "correctIndex": 3,
+          "explanation": "Jawaban yang tepat adalah opsi ke-4 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 4,
+          "type": "mcq",
+          "question": "[C2] Divisi HC menyelenggarakan sesi berbagi pengetahuan umum (general knowledge sharing) dan sosialisasi kebijakan perusahaan terbaru yang wajib dihadiri oleh seluruh personel. Ditinjau dari klasifikasi kategori program pelatihan pada ruang lingkup dokumen, program ini tergolong ke dalam...",
+          "options": [
+            "Onboarding Program",
+            "Reinforcement Program",
+            "Refreshment Program",
+            "Management Development Program",
+            "Core Competency Certification"
+          ],
+          "correctIndex": 2,
+          "explanation": "Jawaban yang tepat adalah opsi ke-3 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 5,
+          "type": "mcq",
+          "question": "[C2] Dalam kerangka hubungan parenting pembelajaran antara PT PP (Persero) Tbk (Induk) dan Anak Perusahaan, prinsip pembagian wewenang yang ditetapkan dalam instruksi kerja adalah...",
+          "options": [
+            "Anak Perusahaan berwenang membuat format asesmen kebutuhan program secara mandiri tanpa terikat pedoman Induk.",
+            "Induk menetapkan metodologi, format, dan template asesmen yang seragam (Uniform), sementara Anak Perusahaan mengembangkan kurikulum dan silabus sesuai panduan umum Induk (Unity).",
+            "Anak Perusahaan dilarang menyelenggarakan pelatihan teknis internal di luar pelatihan bersama yang diadakan Induk.",
+            "Penggunaan sarana pelatihan PP University diperuntukkan secara eksklusif hanya bagi karyawan kantor pusat Induk.",
+            "Kurikulum kompetensi inti (core competency) dirancang secara terpisah dan berbeda total oleh tiap-tiap Anak Perusahaan."
+          ],
+          "correctIndex": 1,
+          "explanation": "Jawaban yang tepat adalah opsi ke-2 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 6,
+          "type": "mcq",
+          "question": "[C3] Seorang staf teknis selesai mengikuti program Public Training bersertifikasi pada tanggal 10 Juli. Agar pengajuan public training berikutnya yang bersangkutan tidak ditangguhkan atau dialihkan oleh Departemen HC Corporate Learning, langkah wajib yang harus dipenuhi beserta tenggat waktunya adalah...",
+          "options": [
+            "Mengunggah bukti kuitansi pembayaran pendaftaran ke sistem LMS maksimal 14 hari pascapelatihan.",
+            "Meminta atasan langsung mengisi kuesioner evaluasi Level 3 maksimal 1x24 jam pascapelatihan.",
+            "Melaksanakan sesi knowledge sharing kepada rekan di unit kerjanya serta mengirimkan bukti kegiatannya maksimal 30 hari kalender sejak pelatihan.",
+            "Mengerjakan post-test ulang di menu My Curricula paling lambat 7 hari kerja pascapelatihan.",
+            "Menyusun modul in-house training tandingan bagi Divisi Operasi maksimal 90 hari pascapelatihan."
+          ],
+          "correctIndex": 2,
+          "explanation": "Jawaban yang tepat adalah opsi ke-3 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 7,
+          "type": "mcq",
+          "question": "[C3] Pelatihan In-House mengenai prosedur kontrak konstruksi ditutup secara resmi pada tanggal 15 Maret. Berdasarkan ketentuan batas waktu pelaksanaan evaluasi dalam WI Pelatihan, kapan atasan langsung dari peserta pelatihan tersebut harus mengisi evaluasi Level 3 (behavior review) di LMS?",
+          "options": [
+            "Maksimal 1x24 jam pascapelatihan (16 Maret).",
+            "Dalam kurun waktu 14 hari kalender pascapelatihan (29 Maret).",
+            "Tepat 30 hari kalender pascapelatihan (14 April).",
+            "Pada periode 3 x 30 hari (90 hari) pascapelatihan (sekitar pertengahan Juni).",
+            "Pada siklus audit mutu internal semesteran berikutnya."
+          ],
+          "correctIndex": 3,
+          "explanation": "Jawaban yang tepat adalah opsi ke-4 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 8,
+          "type": "mcq",
+          "question": "[C3] Pada awal Triwulan IV, sebuah Unit Divisi Operasi mencatat adanya penurunan capaian KPI mutu proyek akibat kurangnya penguasaan teknologi pemodelan digital di lapangan. Berdasarkan alur kerja Training Need Analysis (TNA), tindakan yang tepat dilakukan oleh HCBP Manager Divisi Operasi untuk mengatasi permasalahan tersebut adalah...",
+          "options": [
+            "Menginstruksikan para Project Manager untuk merumuskan revisi RJPP dan menyusun Learning Blueprint baru.",
+            "Menjelaskan detail analisis kebutuhan, mengisi Form TNA Unit dengan menghimpun aspirasi proyek, lalu menyampaikannya ke Departemen HCCL untuk divalidasi.",
+            "Menunjuk vendor pelatihan eksternal secara langsung dan menerbitkan Surat Perintah Kerja tanpa melalui persetujuan HCCL.",
+            "Mewajibkan seluruh staf proyek mendaftar pelatihan publik secara mandiri melalui biaya operasional masing-masing proyek.",
+            "Membuat platform e-learning terpisah di luar SiaPP tanpa mengintegrasikannya dengan kurikulum korporat."
+          ],
+          "correctIndex": 1,
+          "explanation": "Jawaban yang tepat adalah opsi ke-2 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 9,
+          "type": "mcq",
+          "question": "[C3] Departemen HC Corporate Learning mengevaluasi penyelenggaraan pelatihan teknis yang diikuti oleh 25 orang peserta. Dari data evaluasi Level 2, sebanyak 22 orang peserta berhasil mengalami peningkatan nilai antara pre-test dan post-test dengan rata-rata kenaikan skor (gain score) sebesar 75%. Mengacu pada tolok ukur Performance Measurement WI Pelatihan, evaluasi keberhasilan pelatihan tersebut menunjukkan bahwa...",
+          "options": [
+            "Pelatihan belum memenuhi target karena syarat minimal persentase peserta yang mengalami peningkatan nilai adalah 95%.",
+            "Pelatihan berhasil memenuhi target karena peserta yang mengalami peningkatan nilai mencapai 88% (>80%) dengan kategori capaian gain score kualifikasi Tinggi (>70%).",
+            "Pelatihan tergolong berkategori Sedang karena batas capaian kategori Tinggi mempersyaratkan rata-rata gain score di atas 80%.",
+            "Evaluasi dinyatakan tidak valid karena pengukuran gain score hanya dapat dinilai jika tingkat kepuasan Level 1 mencapai 100%.",
+            "Pelatihan wajib diulang karena persentase peserta yang meningkat nilainya berada di bawah ambang batas minimal 90%."
+          ],
+          "correctIndex": 1,
+          "explanation": "Jawaban yang tepat adalah opsi ke-2 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        },
+        {
+          "id": 10,
+          "type": "mcq",
+          "question": "[C3] Sebuah Divisi Operasi perlu menyelenggarakan pelatihan operasional spesifik yang belum terakomodasi dalam kalender pelatihan terpusat Divisi HCM tahun berjalan. Berdasarkan ketentuan tata kelola inisiasi pelatihan internal unit, skenario pelaksanaan yang sesuai prosedur adalah...",
+          "options": [
+            "Pelatihan diselenggarakan di bawah tanggung jawab Mgr-HCBP Divisi Operasi, dikoordinasikan melalui memo ke Divisi HCM untuk pencatatan database, dengan biaya menjadi beban unit bersangkutan.",
+            "Pelatihan tidak diizinkan berlangsung karena setiap pelatihan yang tidak masuk kalender tahunan otomatis melanggar tata tertib perusahaan.",
+            "Pelatihan langsung diselenggarakan mandiri tanpa koordinasi atau pelaporan triwulanan ke Divisi HCM.",
+            "Seluruh biaya penyelenggaraan otomatis dialihkan menjadi beban anggaran Rencana Kerja Induk Divisi HCM tanpa persetujuan memo.",
+            "Unit pelaksana dilarang memanfaatkan fasilitas fisik PP University karena fasilitas tersebut khusus untuk program inisiasi kantor pusat."
+          ],
+          "correctIndex": 0,
+          "explanation": "Jawaban yang tepat adalah opsi ke-1 sesuai ketentuan pada instruksi kerja PP/SOP/E3-029 REV-2."
+        }
+      ]
+    },
+    {
+      "type": "summaryCertificate",
+      "category": "Penutup & Sertifikat",
+      "title": "Penutup & Sertifikasi",
+      "heroTitle": "Kompeten Work Instruction Pelatihan",
+      "lead": "Selamat! Anda telah menuntaskan seluruh 18 modul pembelajaran PP/SOP/E3-029 REV-2.",
+      "takeaways": [
+        {
+          "icon": "psychology",
+          "title": "Learning Value Chain Terstandar",
+          "desc": "Diagnosis (CCA/DNA/TNA), Design & Development kurikulum, Delivery LMS SiaPP, dan Impact Measurement 3 level."
+        },
+        {
+          "icon": "hub",
+          "title": "Integrasi Sistem LMS SiaPP",
+          "desc": "Digitalisasi penuh penugasan pembelajaran, pencatatan Learning Point & KC Point, hingga sertifikat otomatis."
+        },
+        {
+          "icon": "groups",
+          "title": "Sinergi Parenting PTPP Group",
+          "desc": "Implementasi prinsip Uniform (asesmen seragam), Unity (silabus selaras), dan Unique (kekhususan unit bisnis)."
+        },
+        {
+          "icon": "workspace_premium",
+          "title": "Sertifikat Kelulusan Resmi",
+          "desc": "Verifikasi pencapaian evaluasi Level 2 passing grade minimal 80 siap cetak standar A4 landscape."
+        }
+      ],
+      "certificate": {
+        "brandName": "PT PP (Persero) Tbk",
+        "division": "Human Capital Management & Corporate Learning",
+        "signatory": "SVP - Human Capital Management",
+        "certTitle": "Work Instruction Pelatihan (PP/SOP/E3-029 REV-2)",
+        "regPrefix": "PP/HCCL/E3-029"
+      }
+    }
+  ],
+  "glossary": [
+    {
+      "id": "term_1",
+      "istilah": "Blended Learning",
+      "kategori": "Metode Pembelajaran",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Penggabungan dari media pelatihan yang berbeda (teknologi, aktivitas dan jenis acara) untuk membuat program pelatihan yang optimal untuk peserta tertentu (Bersin, 2004).",
+      "catatan": "Menggabungkan self-learning di LMS dengan sesi tatap muka interaktif/webinar."
+    },
+    {
+      "id": "term_2",
+      "istilah": "Class (Kelas)",
+      "kategori": "Struktur LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Salah satu bentuk pembelajaran berupa sesi classroom atau agenda pembelajaran yang diatur waktu dan tempatnya.",
+      "catatan": "Dapat diselenggarakan baik secara fisik di PP University maupun online virtual class."
+    },
+    {
+      "id": "term_3",
+      "istilah": "Course (Item)",
+      "kategori": "Struktur LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Item pembelajaran/training dalam LMS, yang berisi konten pembelajaran.",
+      "catatan": "Merupakan unit materi mandiri yang dapat diakses secara digital."
+    },
+    {
+      "id": "term_4",
+      "istilah": "Curricula / Curriculum LMS",
+      "kategori": "Struktur LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Salah satu bentuk pembelajaran di LMS yang berisi beberapa item pembelajaran yang perlu diambil dan diselesaikan oleh pegawai dalam periode waktu tertentu.",
+      "catatan": "Memiliki batas waktu pengerjaan dan bobot kelulusan."
+    },
+    {
+      "id": "term_5",
+      "istilah": "Curriculum Vitae (CV)",
+      "kategori": "Data Kepegawaian",
+      "badgeColor": "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200",
+      "pengertian": "Catatan kepegawaian seseorang yang menyangkut: jabatan, pengalaman kerja, pendidikan, dan data-data pribadi lainnya.",
+      "catatan": "CV setiap pegawai terdapat di biodata masing-masing pegawai pada aplikasi SiaPP."
+    },
+    {
+      "id": "term_6",
+      "istilah": "Evaluasi Pelatihan",
+      "kategori": "Evaluasi",
+      "badgeColor": "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300",
+      "pengertian": "Cara-cara/proses yang digunakan untuk menilai hasil atau luaran dari pelatihan, meliputi kepuasan, pembelajaran, perilaku dan kinerja.",
+      "catatan": "Menerapkan kerangka evaluasi Kirkpatrick terstandarisasi."
+    },
+    {
+      "id": "term_7",
+      "istilah": "Evaluasi Pelatihan Level 1 (Reaction)",
+      "kategori": "Evaluasi",
+      "badgeColor": "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300",
+      "pengertian": "Evaluasi untuk mengukur efektivitas pelaksanaan pelatihan, meliputi materi pelatihan, trainer, penyelenggaraan pelatihan.",
+      "catatan": "Wajib diisi dalam 1x24 jam pasca pelatihan melalui menu My Learning Assignments di LMS."
+    },
+    {
+      "id": "term_8",
+      "istilah": "Evaluasi Pelatihan Level 2 (Learning)",
+      "kategori": "Evaluasi",
+      "badgeColor": "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300",
+      "pengertian": "Evaluasi untuk mengukur pemahaman peserta atas materi pelatihan.",
+      "catatan": "Diukur melalui learning gain dari Pre-Test dan Post-Test di LMS (1x24 jam pasca pelatihan)."
+    },
+    {
+      "id": "term_9",
+      "istilah": "Evaluasi Pelatihan Level 3 (Behavior)",
+      "kategori": "Evaluasi",
+      "badgeColor": "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300",
+      "pengertian": "Evaluasi untuk mengukur penerapan materi pelatihan pada pekerjaan sehari-hari.",
+      "catatan": "Diisi oleh atasan langsung peserta di LMS dalam rentang 3x30 hari (90 hari) pasca pelatihan."
+    },
+    {
+      "id": "term_10",
+      "istilah": "Expert",
+      "kategori": "Instruktur & Peran",
+      "badgeColor": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300",
+      "pengertian": "Individu yang berasal dari internal ataupun eksternal perusahaan yang memiliki kompetensi, pengalaman, pendidikan dan sertifikat di bidang keahlian tertentu yang ditetapkan oleh Expert Committee.",
+      "catatan": "Tergabung dalam database resmi Expert Pool PT PP."
+    },
+    {
+      "id": "term_11",
+      "istilah": "Fasilitator Pelatihan",
+      "kategori": "Instruktur & Peran",
+      "badgeColor": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300",
+      "pengertian": "Pihak internal yang mengelola pelatihan (Divisi HCM, HCBP, dan/atau HC Anak Perusahaan).",
+      "catatan": "Bertanggung jawab atas kelancaran operasional, absensi, dan pelaporan triwulanan."
+    },
+    {
+      "id": "term_12",
+      "istilah": "Individual Development Plan (IDP)",
+      "kategori": "Perencanaan",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Dokumen yang diselesaikan oleh individu untuk rencana pengembangan diri selama periode tertentu.",
+      "catatan": "Diselaraskan dengan aspirasi karir dan hasil asesmen kompetensi pegawai."
+    },
+    {
+      "id": "term_13",
+      "istilah": "In-House Training (Pelatihan Inggriya)",
+      "kategori": "Pelaksanaan",
+      "badgeColor": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-300",
+      "pengertian": "Pelatihan yang diselenggarakan oleh pihak DIV HCM PT PP (Persero) Tbk, baik yang dilaksanakan secara tatap muka, di PP University atau di tempat lain, maupun dengan sistem online, dengan trainer dari internal maupun eksternal.",
+      "catatan": "Dikhususkan untuk menjawab kebutuhan kompetensi internal PP Group."
+    },
+    {
+      "id": "term_14",
+      "istilah": "Job Family",
+      "kategori": "Struktur Organisasi",
+      "badgeColor": "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200",
+      "pengertian": "Sekelompok jabatan yang memiliki kesamaan kemiripan karakteristik dan tanggung jawab.",
+      "catatan": "Menjadi dasar pengelompokan silabus dan kurikulum pembelajaran fungsional."
+    },
+    {
+      "id": "term_15",
+      "istilah": "Kalender Pelatihan",
+      "kategori": "Perencanaan",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Rencana pelaksanaan in-house training yang disusun sebelum tahun berjalan.",
+      "catatan": "Disusun berdasarkan Development Plan yang telah disetujui Direksi."
+    },
+    {
+      "id": "term_16",
+      "istilah": "Knowledge Center (KC) Point",
+      "kategori": "Learning Agility",
+      "badgeColor": "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300",
+      "pengertian": "Poin yang didapatkan sebagai hasil dari knowledge sharing (pemateri, penulis, penyusun dokumen/rencana kerja, dll).",
+      "catatan": "Merupakan komponen pembentuk skor Learning Agility pegawai."
+    },
+    {
+      "id": "term_17",
+      "istilah": "Kurikulum",
+      "kategori": "Desain Pembelajaran",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Seperangkat rencana dan pengaturan mengenai tujuan, sasaran, daftar mata pelatihan, serta silabus masing-masing pelatihan.",
+      "catatan": "Dirancang bersama BPO dan subject matter expert."
+    },
+    {
+      "id": "term_18",
+      "istilah": "Learning Agility Point",
+      "kategori": "Learning Agility",
+      "badgeColor": "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300",
+      "pengertian": "Akumulasi Learning Point dan KC Point tiap-tiap pegawai.",
+      "catatan": "Digunakan sebagai kriteria evaluasi jabatan, KPI individu, dan klasifikasi talent di ITMS."
+    },
+    {
+      "id": "term_19",
+      "istilah": "Learning History",
+      "kategori": "Sistem LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Halaman dalam LMS yang digunakan pegawai untuk melihat semua item pembelajaran yang telah diselesaikan.",
+      "catatan": "Juga berfungsi sebagai tempat submit sertifikat bukti keikutsertaan public training."
+    },
+    {
+      "id": "term_20",
+      "istilah": "Learning Delivery & Deployment",
+      "kategori": "Rantai Nilai",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Tahap dalam learning value chain untuk mengimplementasikan program pengembangan.",
+      "catatan": "Mencakup persiapan teknis, penugasan LMS, hingga eksekusi sesi pembelajaran."
+    },
+    {
+      "id": "term_21",
+      "istilah": "Learning Design & Development",
+      "kategori": "Rantai Nilai",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Tahap dalam learning value chain untuk merumuskan sasaran program pengembangan, merancang program pengembangan, dan mengembangkan materi program pengembangan.",
+      "catatan": "Menghasilkan modul, silabus, dan instrumen evaluasi terstandarisasi."
+    },
+    {
+      "id": "term_22",
+      "istilah": "Learning Impact Measurement",
+      "kategori": "Rantai Nilai",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Tahap dalam learning value chain untuk mengukur efektivitas program pengembangan.",
+      "catatan": "Mengukur kepuasan (L1), pemahaman (L2), dan perilaku kerja (L3)."
+    },
+    {
+      "id": "term_23",
+      "istilah": "Learning Needs Diagnostic (LND)",
+      "kategori": "Rantai Nilai",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Tahap dalam learning value chain untuk menganalisis kebutuhan program pengembangan.",
+      "catatan": "Terdiri dari 3 analisis: Core Competency Analysis (CCA), Development Needs Analysis (DNA), dan TNA."
+    },
+    {
+      "id": "term_24",
+      "istilah": "Learning Value Chain",
+      "kategori": "Rantai Nilai",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Rantai dalam proses utama dalam Sistem Pembelajaran dan Pengembangan Kapabilitas, terdiri dari 4 tahap: Diagnostic, Design & Development, Delivery & Deployment, dan Evaluation & Measurement.",
+      "catatan": "Pilar arsitektur pembelajaran terintegrasi di PT PP (Persero) Tbk."
+    },
+    {
+      "id": "term_25",
+      "istilah": "Learning Management System (LMS)",
+      "kategori": "Sistem LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Platform pembelajaran yang terintegrasi dengan HC Integrated System (HCIS) SiaPP yang didesain secara spesifik untuk menciptakan, mendistribusikan, dan mengelola konten edukasi bagi pegawai sesuai skema program pengembangan.",
+      "catatan": "Dapat diakses melalui hcm44.sapsf.com atau aplikasi SAP SuccessFactors mobile."
+    },
+    {
+      "id": "term_26",
+      "istilah": "Learning Point",
+      "kategori": "Learning Agility",
+      "badgeColor": "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300",
+      "pengertian": "Poin yang didapatkan sebagai hasil dari keikutsertaan dalam program pengembangan.",
+      "catatan": "Otomatis terakumulasi setelah lulus evaluasi dan menyelesaikan survei pelatihan."
+    },
+    {
+      "id": "term_27",
+      "istilah": "Library",
+      "kategori": "Sistem LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Halaman dalam LMS yang berisi item pembelajaran seperti Course/Program/Class yang dapat pegawai ambil di luar dari item pembelajaran yang telah ditugaskan.",
+      "catatan": "Mewadahi pembelajaran mandiri sukarela bagi seluruh insan PTPP."
+    },
+    {
+      "id": "term_28",
+      "istilah": "My Curricula",
+      "kategori": "Sistem LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Kurikulum pembelajaran yang diberikan kepada pegawai.",
+      "catatan": "Berisi paket pembelajaran wajib sesuai jalur karir dan kompetensi."
+    },
+    {
+      "id": "term_29",
+      "istilah": "My Learning (My Learning Plan)",
+      "kategori": "Sistem LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Halaman dalam LMS yang berisi menu pembelajaran milik pegawai.",
+      "catatan": "Dashboard utama aktivitas belajar setiap insan PTPP."
+    },
+    {
+      "id": "term_30",
+      "istilah": "My Learning Assignments",
+      "kategori": "Sistem LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Item pembelajaran yang ditugaskan kepada pegawai.",
+      "catatan": "Tempat menyelesaikan materi wajib, ujian, dan formulir evaluasi L1-L2."
+    },
+    {
+      "id": "term_31",
+      "istilah": "Pelatihan",
+      "kategori": "Konsep Dasar",
+      "badgeColor": "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200",
+      "pengertian": "Sebuah proses belajar di mana pegawai belajar tentang konsep, kemampuan, sikap, dan pengetahuan untuk mencapai tujuannya (Mathis dan Jackson, 2010).",
+      "catatan": "Mencakup ranah kognitif, afektif, dan psikomotorik."
+    },
+    {
+      "id": "term_32",
+      "istilah": "Program",
+      "kategori": "Struktur LMS",
+      "badgeColor": "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300",
+      "pengertian": "Salah satu bentuk pembelajaran yang terdapat di LMS. Program berisi beberapa item pembelajaran atau task dan disusun dalam beberapa agenda pembelajaran.",
+      "catatan": "Dapat berdurasi multi-tahap (seperti Management Development Program)."
+    },
+    {
+      "id": "term_33",
+      "istilah": "Public Training",
+      "kategori": "Pelaksanaan",
+      "badgeColor": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-300",
+      "pengertian": "Pelatihan yang diselenggarakan oleh pihak luar dan diikuti oleh berbagai perusahaan maupun perorangan.",
+      "catatan": "Memerlukan persetujuan SM-HCCL dan kewajiban knowledge sharing maksimal 30 hari."
+    },
+    {
+      "id": "term_34",
+      "istilah": "SiaPP",
+      "kategori": "Sistem IT",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Nama sistem kepegawaian / HC Integrated System (HCIS) PTPP.",
+      "catatan": "Sistem induk database personil, riwayat karir, dan profil kompetensi pegawai."
+    },
+    {
+      "id": "term_35",
+      "istilah": "Silabus",
+      "kategori": "Desain Pembelajaran",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Rencana pembelajaran pada suatu dan/atau kelompok mata pelajaran/tema tertentu yang mencakup standar kompetensi, kompetensi dasar, materi pokok/pembelajaran, kegiatan pembelajaran, indikator pencapaian kompetensi untuk penilaian, penilaian, alokasi waktu, dan sumber belajar (Kunandar, 2011).",
+      "catatan": "Rujukan teknis instruktur dalam menyampaikan materi."
+    },
+    {
+      "id": "term_36",
+      "istilah": "Trainee",
+      "kategori": "Peserta & Peran",
+      "badgeColor": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300",
+      "pengertian": "Peserta pelatihan (calon pegawai, pegawai, Direksi, Komisaris, Spesialis/Tenaga Ahli dan/atau vendor/subkon/mandor/tukang sesuai dengan tujuan program pelatihan).",
+      "catatan": "Mencakup internal maupun eksternal rantai pasok perusahaan."
+    },
+    {
+      "id": "term_37",
+      "istilah": "Trainer",
+      "kategori": "Instruktur & Peran",
+      "badgeColor": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300",
+      "pengertian": "Orang yang memberikan materi pelatihan.",
+      "catatan": "Dapat berupa pengajar internal bersertifikat dari Expert Pool maupun mitra eksternal."
+    },
+    {
+      "id": "term_38",
+      "istilah": "Training Need Analysis (TNA)",
+      "kategori": "Perencanaan",
+      "badgeColor": "bg-blue-100 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-lightBlue",
+      "pengertian": "Proses analisis dan identifikasi kebutuhan pelatihan dengan mengacu kepada standar yang diperlukan dan kondisi aktual saat ini.",
+      "catatan": "Dilakukan berkala tiap tahun pada triwulan IV untuk menutup kesenjangan kompetensi."
+    }
+  ],
+  "narration": {
+    "0": "Selamat datang di modul interaktif Work Instruction Pelatihan PT PP (Persero) Tbk, nomor dokumen PP/SOP/E3-029 Revisi Dua. Modul ini memuat 6 pembaruan proses bisnis HCM, termasuk integrasi Core Competency BUMN Karya, operasional LMS SiaPP, dan penguatan peran HCBP Manager.",
+    "1": "Maksud dan Tujuan Pelatihan memuat 7 sasaran strategis, mulai dari pemenuhan kompetensi jabatan, peningkatan produktivitas, hingga transfer keahlian dan kaderisasi. Ruang lingkup mencakup 4 pilar Learning Value Chain serta sinergi Parenting: Uniform, Unity, dan Unique.",
+    "2": "Referensi Prosedur Pelatihan terintegrasi dengan 7 standar internasional ISO (ISO 9001 Mutu, 14001 Lingkungan, 19650 BIM, 21500 Proyek, 27001 Keamanan Informasi, 37001 Anti Penyuapan, 45001 K3) serta pedoman internal GCG, Code of Conduct, dan SK Parenting HCM.",
+    "3": "Alur Proses 5.1 Learning Needs Diagnostic mencakup 3 metode diagnosis: CCA berbasis VRIO untuk Learning Blueprint, DNA berbasis SKKNI untuk Learning Path, serta pengisian TNA Unit pada Triwulan IV yang divalidasi menjadi Rencana Program Pengembangan tahunan.",
+    "4": "Alur Proses 5.2 Learning Design & Development mengatur perumusan topik bersama BPO dan Expert, penetapan target peserta, seleksi pengajar dari Expert Pool atau rekanan profesional, pembuatan modul, pemenuhan K3L fasilitas pelatihan, dan penetapan evaluasi.",
+    "5": "Alur Proses 5.2 Learning Delivery & Deployment memfasilitasi dua skema akses: assignment otomatis melalui LMS serta pengajuan mandiri dengan approval atasan. Mengakomodasi pembelajaran inhouse maupun public training berbiaya.",
+    "6": "Alur Proses 5.4 Learning Impact Measurement menetapkan siklus evaluasi 3 level: kuesioner reaksi Level 1 dan Post-Test Level 2 dalam 1x24 jam, serta survei perilaku Level 3 oleh atasan dalam 90 hari kalender pasca pelatihan.",
+    "7": "Ketentuan Umum 6.1.1 sampai 6.1.3 mengatur teknis Core Competency Analysis berbasis VRIO, Development Needs Analysis berbasis Job Family, serta mekanisme TNA unit bisnis dan peran pendampingan intensif HCBP Manager.",
+    "8": "Ketentuan Umum 6.2.1 sampai 6.2.6 memuat pedoman perancangan topik, kualifikasi pengajar internal dan eksternal, metode blended learning, penerapan prinsip K3L, penentuan Nilai Minimum Kelulusan (NMK), dan model finansial RKAP.",
+    "9": "Ketentuan Umum 6.3.1 sampai 6.3.6 menjabarkan tata kelola LMS SiaPP, hak pengajar berupa honorarium dan KC Point, tata cara pengajuan public training berizin SM-HCCL, serta konversi poin ke dalam Learning Agility dan ITMS.",
+    "10": "Ketentuan Umum 6.4.1 sampai 6.4.4 merinci batas waktu evaluasi Level 1 dan 2 dalam 1x24 jam, kewajiban knowledge sharing peserta public training maksimal 30 hari, serta evaluasi perilaku Level 3 dalam 90 hari.",
+    "11": "Dokumen Terkait memetakan empat prosedur acuan: Prosedur Program Pengembangan Pegawai, Pengelolaan Expert Pool, Pengelolaan Pengetahuan (Knowledge Management), dan Prosedur Pengadaan Barang dan Jasa.",
+    "12": "Record Pelatihan mencatat 18 jenis rekaman bukti kerja yang wajib dipelihara dalam bentuk softcopy maupun hardcopy, mulai dari TNA, SPK vendor, presensi, sertifikat LMS, hingga analisis continuous improvement.",
+    "13": "Lampiran memuat 11 formulir standar yang menjadi instrumen baku pelaksanaan, evaluasi, kalender, hingga pencatatan Learning Point pegawai.",
+    "14": "Performance Measurement mengukur tingkat kepuasan peserta, Gain Score pre-post test dengan target kelulusan lebih dari 80%, evaluasi perilaku, dan tingkat kehadiran minimal 70% di setiap sesi.",
+    "15": "Identifikasi Potensi Risiko menganalisis dua risiko utama: kegagalan efektivitas kurikulum dan kesulitan pemilihan program yang tepat, beserta langkah-langkah mitigasi preventifnya.",
+    "16": "Kuis Evaluasi Pemahaman memuat 10 butir pertanyaan terintegrasi melalui Google Form. Silakan kerjakan seluruh soal secara teliti sebelum beralih ke penutup.",
+    "17": "Selamat, Anda telah menuntaskan seluruh materi Work Instruction Pelatihan PT PP (Persero) Tbk. Mari wujudkan insan BUMN yang adaptif, kompeten, dan senantiasa berorientasi pada keunggulan!"
+  },
+  "tenggatCheatSheet": [
+    {
+      "value": "Triwulan IV",
+      "label": "Pelaksanaan TNA Tahunan",
+      "title": "TNA Unit & Proyek (Klausul 6.1.3)",
+      "desc": "Pengisian kuesioner TNA Unit oleh seluruh unit bisnis dan proyek melalui pendampingan HCBP untuk memetakan kebutuhan pelatihan tahun berikutnya.",
+      "icon": "event"
+    },
+    {
+      "value": "Triwulan I",
+      "label": "Approval Development Plan",
+      "title": "Persetujuan Rencana Program (Alur 5.1)",
+      "desc": "Persetujuan Rencana Program Pengembangan oleh Direksi untuk kemudian diturunkan menjadi kalender pelatihan triwulan I s.d. III.",
+      "icon": "verified"
+    },
+    {
+      "value": "1 x 24 Jam",
+      "label": "Evaluasi Level 1 & Level 2",
+      "title": "Batas Pengisian Survey & Post-Test (Klausul 6.4.1 & 6.4.2)",
+      "desc": "Batas waktu maksimal peserta mengisi kuesioner kepuasan (Level 1) dan menyelesaikan Post-Test (Level 2) di LMS pasca pelatihan berakhir.",
+      "icon": "timer"
+    },
+    {
+      "value": "Maks. 30 Hari",
+      "label": "Knowledge Sharing Public Training",
+      "title": "Kewajiban Pasca Public Training (Klausul 6.4.2.f)",
+      "desc": "Peserta public training wajib menyelenggarakan sharing knowledge kepada rekan kerja di unitnya dan mengunggah bukti ke LMS.",
+      "icon": "share"
+    },
+    {
+      "value": "3 x 30 Hari (90 Hari)",
+      "label": "Evaluasi Dampak Level 3",
+      "title": "Review Perilaku Kerja oleh Atasan (Klausul 6.4.3)",
+      "desc": "Atasan langsung peserta mengisi evaluasi Level 3 di LMS untuk mengukur perubahan perilaku kerja dan dampak nyata pada KPI unit.",
+      "icon": "psychology"
+    },
+    {
+      "value": "> 80% & >= 70%",
+      "label": "Gain Score & Kehadiran",
+      "title": "Ambang Batas Kelulusan & Presensi (Poin 10)",
+      "desc": "Target peningkatan nilai (gain score) >80% peserta lulus passing grade (NMK) serta tingkat kehadiran minimal 70% per sesi pelatihan.",
+      "icon": "speed"
+    }
+  ],
+  "hintTips": [
+    {
+      "icon": "navigation",
+      "title": "Navigasi Slide & Gating",
+      "desc": "Gunakan tombol Lanjut atau tombol panah keyboard. Setiap slide memiliki timer 10 detik sebelum slide berikutnya terbuka."
+    },
+    {
+      "icon": "schema",
+      "title": "Interactive Tree Diagram",
+      "desc": "Pada slide 3, 4, 5, dan 6, Anda dapat melakukan pan/zoom pada kanvas bagan alur serta mengklik setiap aktivitas untuk melihat detail SOP."
+    },
+    {
+      "icon": "assignment_turned_in",
+      "title": "Evaluasi Pemahaman (Kuis)",
+      "desc": "Selesaikan 10 butir soal di slide 16 dengan nilai minimal 80 untuk membuka akses slide 17 dan menerbitkan Sertifikat Resmi."
+    },
+    {
+      "icon": "menu_book",
+      "title": "Terminologi & Cheat-Sheet",
+      "desc": "Gunakan tombol Terminologi di header untuk mencari 38 definisi resmi dan tombol Tenggat untuk ringkasan angka kritis."
+    }
+  ],
+  "resources": [
+    {
+      "title": "PP/SOP/E3-029 REV-2",
+      "desc": "Work Instruction Pelatihan PT PP (Persero) Tbk"
+    },
+    {
+      "title": "4 Prosedur Terkait",
+      "desc": "Program Pengembangan, Expert Pool, Knowledge Management & Pengadaan Barang/Jasa"
+    },
+    {
+      "title": "18 Dokumen Record",
+      "desc": "Katalog rekaman bukti kerja terstandar (8.1 s/d 8.18)"
+    },
+    {
+      "title": "11 Formulir Standar",
+      "desc": "Lampiran baku TNA, evaluasi Level 1-3, kalender pelatihan dan learning point"
+    }
+  ]
+}

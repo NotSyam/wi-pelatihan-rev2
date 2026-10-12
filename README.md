@@ -28,10 +28,22 @@ Modul pembelajaran interaktif digital mandiri (*self-learning web module*) untuk
 
 ---
 
-## 🚀 Cara Menjalankan Modul
+## 🚀 Cara Menjalankan & Membangun Ulang Modul
 Modul bersifat **100% Client-side (Single File Standalone HTML)**.
 1. Cukup buka berkas [`index.html`](index.html) atau [`index_tree_canvas.html`](index_tree_canvas.html) pada browser apapun (Google Chrome, Microsoft Edge, Mozilla Firefox, Safari).
 2. Modul dapat di-host langsung via **GitHub Pages**, LMS internal via `<iframe>`, atau dibuka langsung secara lokal (`file://`).
+
+### 🛠️ Arsitektur `/doc-to-interactive`
+Modul ini dikompilasi menggunakan skill `/doc-to-interactive` dengan pemisahan berkas konten terstruktur:
+- `content.json`: Master schema data modul (18 unit, 18 slide types, kamus 38 istilah terminologi, cheat-sheet tenggat, bank 10 kuis).
+- Membangun ulang berkas HTML:
+  ```bash
+  python doc-to-interactive/scripts/build_module.py \
+    --content content.json \
+    --output index.html \
+    --brand-preset ptpp \
+    --validate
+  ```
 
 ---
 *PT PP (Persero) Tbk — Human Capital Management (HCM) Division*
