@@ -789,7 +789,8 @@
     // ========================================================================
     const COURSE_CONFIG = {
       devMode: false,            // Review Mode aktif agar pengguna bebas preview
-      enableGatingTimer: false,
+      enableGatingTimer: true,
+      gatingSeconds: 10,
       googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSduxkSU-yLWz0BZyy6oSDOmaQ7_vJ-zE-eWv6CnNe0j7vuiVw/viewform?embedded=true",
       totalUnits: 18
     };
@@ -1553,7 +1554,9 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
       isSubmittingScore: false,
       quizAttemptCount: 0,
       maxQuizAttempts: 5,
-      highestQuizScore: 0
+      highestQuizScore: 0,
+      slideGateSecondsLeft: 10,
+      isGateTimerActive: false
     };
 
     // ========================================================================
@@ -1784,6 +1787,95 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
     // ========================================================================
     // NAVIGATION CONTROLS
     // ========================================================================
+    
+    // ========================================================================
+    // 10-SECOND GATE TIMER CONTROLLER
+    // ========================================================================
+    let gateTimerInterval = null;
+
+    function startSlideGatingTimer() {
+      clearInterval(gateTimerInterval);
+      const isAlreadyCompleted = state.completedSlides.has(state.currentSlide);
+      const noticeEl = document.getElementById("slideGateNotice");
+      const secEl = document.getElementById("gateCountdownSec");
+      const btnNext = document.getElementById("btnNextSlide");
+
+      // Slide 16 & 17 have their own special completion requirements (quiz & cert)
+      if (isAlreadyCompleted || state.currentSlide >= 16 || !COURSE_CONFIG.enableGatingTimer) {
+        state.slideGateSecondsLeft = 0;
+        state.isGateTimerActive = false;
+        if (noticeEl) {
+          noticeEl.className = "text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 transition-all";
+          noticeEl.innerHTML = `<span class="material-symbols-outlined text-xs">check_circle</span><span>Selesai Dipelajari</span>`;
+        }
+        updateGatingNextButton(true);
+        renderOutline();
+        return;
+      }
+
+      state.slideGateSecondsLeft = COURSE_CONFIG.gatingSeconds || 10;
+      state.isGateTimerActive = true;
+      updateGatingNextButton(false);
+      renderOutline();
+
+      if (noticeEl) {
+        noticeEl.className = "text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-800 transition-all";
+        noticeEl.innerHTML = `<span class="material-symbols-outlined text-xs">hourglass_top</span><span>Kunci Terbuka: <b id="gateCountdownSec">${state.slideGateSecondsLeft}</b>s</span>`;
+      }
+
+      gateTimerInterval = setInterval(() => {
+        state.slideGateSecondsLeft -= 1;
+        const currentSecEl = document.getElementById("gateCountdownSec");
+        const currentNoticeEl = document.getElementById("slideGateNotice");
+
+        if (currentSecEl) {
+          currentSecEl.innerText = Math.max(0, state.slideGateSecondsLeft);
+        }
+
+        const nextTxt = document.getElementById("nextBtnText");
+        if (nextTxt && state.isGateTimerActive && state.slideGateSecondsLeft > 0) {
+          nextTxt.innerText = `Tunggu (${state.slideGateSecondsLeft}s)`;
+        }
+
+        if (state.slideGateSecondsLeft <= 0) {
+          clearInterval(gateTimerInterval);
+          state.isGateTimerActive = false;
+          completeCurrentSlideTask();
+          playTone('success');
+
+          if (currentNoticeEl) {
+            currentNoticeEl.className = "text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 transition-all";
+            currentNoticeEl.innerHTML = `<span class="material-symbols-outlined text-xs">check_circle</span><span>Selesai Dipelajari</span>`;
+          }
+
+          updateGatingNextButton(true);
+          renderOutline();
+        }
+      }, 1000);
+    }
+
+    function updateGatingNextButton(isUnlocked) {
+      const btnNext = document.getElementById("btnNextSlide");
+      const nextTxt = document.getElementById("nextBtnText");
+      if (!btnNext) return;
+
+      if (isUnlocked) {
+        btnNext.disabled = false;
+        btnNext.classList.remove("opacity-40", "cursor-not-allowed");
+        btnNext.classList.add("cursor-pointer", "btn-next-ready");
+        if (nextTxt) {
+          nextTxt.innerText = (state.currentSlide === COURSE_CONFIG.totalUnits - 1) ? "Ulangi" : "Lanjut";
+        }
+      } else {
+        btnNext.disabled = true;
+        btnNext.classList.add("opacity-40", "cursor-not-allowed");
+        btnNext.classList.remove("cursor-pointer", "btn-next-ready");
+        if (nextTxt) {
+          nextTxt.innerText = `Tunggu (${state.slideGateSecondsLeft}s)`;
+        }
+      }
+    }
+
     function goToSlide(idx) {
       // Gating khusus Slide 17 (Penutup & Sertifikat): wajib lulus kuis >= 80
       if (idx === 17 && (!state.quizPassed || state.quizScore < 80)) {
@@ -1802,10 +1894,21 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
       simProgress = 0;
       updateSeekbarUI(0, 0, simDuration);
 
+      // Cek apakah slide saat ini masih terkunci oleh timer 10 detik
+      if (COURSE_CONFIG.enableGatingTimer && state.isGateTimerActive && idx > state.currentSlide && !state.completedSlides.has(state.currentSlide)) {
+        playTone('error');
+        alert(`Harap pelajari materi slide saat ini terlebih dahulu! Kunci akan terbuka dalam ${state.slideGateSecondsLeft} detik.`);
+        return;
+      }
+
       state.currentSlide = idx;
-      state.completedSlides.add(idx);
+      // Jangan langsung anggap completed jika timer aktif dan belum pernah selesai
+      if (!COURSE_CONFIG.enableGatingTimer || state.completedSlides.has(idx)) {
+        state.completedSlides.add(idx);
+      }
 
       renderCurrentSlide();
+      startSlideGatingTimer();
       renderOutline();
       updateCaptionText();
       updateProgressUI();
@@ -1908,7 +2011,10 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
       list.innerHTML = COURSE_UNITS.map(u => {
         const isActive = u.id === state.currentSlide;
         const isDone = state.completedSlides.has(u.id);
-        const isUnlocked = COURSE_CONFIG.devMode || isDone || state.completedSlides.has(u.id - 1);
+        // Gated Mode: Slide terbuka hanya jika sudah selesai atau slide sebelumnya sudah selesai DAN timer aktif slide saat ini sudah tuntas
+        const isPrevDone = (u.id === 0) || state.completedSlides.has(u.id - 1);
+        const isCurrentActiveTimer = state.isGateTimerActive && (u.id > state.currentSlide);
+        const isUnlocked = COURSE_CONFIG.devMode || isDone || (isPrevDone && !isCurrentActiveTimer);
         
         const activeCls = isActive 
           ? "bg-brand-primary text-white shadow-sm font-bold" 
@@ -3707,6 +3813,7 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
 
     window.addEventListener("DOMContentLoaded", () => {
       renderCurrentSlide();
+      startSlideGatingTimer();
       renderOutline();
       updateCaptionText();
       updateProgressUI();
