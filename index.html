@@ -1884,26 +1884,30 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
         return;
       }
       if (idx < 0 || idx >= COURSE_CONFIG.totalUnits) return;
-      if (!COURSE_CONFIG.devMode && !state.completedSlides.has(idx) && idx > state.currentSlide && !state.completedSlides.has(idx - 1)) {
+
+      const isQuizPassedTransit = state.quizPassed && (idx === 17 || idx === state.currentSlide + 1);
+
+      if (!COURSE_CONFIG.devMode && !isQuizPassedTransit && !state.completedSlides.has(idx) && idx > state.currentSlide && !state.completedSlides.has(idx - 1)) {
         playTone('error');
         alert("Selesaikan materi sebelumnya terlebih dahulu!");
         return;
       }
-      playTone('click');
-      pauseAudio();
-      simProgress = 0;
-      updateSeekbarUI(0, 0, simDuration);
 
       // Cek apakah slide saat ini masih terkunci oleh timer 10 detik
-      if (COURSE_CONFIG.enableGatingTimer && state.isGateTimerActive && idx > state.currentSlide && !state.completedSlides.has(state.currentSlide)) {
+      if (COURSE_CONFIG.enableGatingTimer && state.isGateTimerActive && !isQuizPassedTransit && idx > state.currentSlide && !state.completedSlides.has(state.currentSlide)) {
         playTone('error');
         alert(`Harap pelajari materi slide saat ini terlebih dahulu! Kunci akan terbuka dalam ${state.slideGateSecondsLeft} detik.`);
         return;
       }
 
+      playTone('click');
+      pauseAudio();
+      simProgress = 0;
+      updateSeekbarUI(0, 0, simDuration);
+
       state.currentSlide = idx;
       // Jangan langsung anggap completed jika timer aktif dan belum pernah selesai
-      if (!COURSE_CONFIG.enableGatingTimer || state.completedSlides.has(idx)) {
+      if (!COURSE_CONFIG.enableGatingTimer || state.completedSlides.has(idx) || isQuizPassedTransit) {
         state.completedSlides.add(idx);
       }
 
@@ -2012,9 +2016,11 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
         const isActive = u.id === state.currentSlide;
         const isDone = state.completedSlides.has(u.id);
         // Gated Mode: Slide terbuka hanya jika sudah selesai atau slide sebelumnya sudah selesai DAN timer aktif slide saat ini sudah tuntas
+        const isCertSlide = (u.id === 17);
+        const certUnlocked = state.quizPassed && state.quizScore >= 80;
         const isPrevDone = (u.id === 0) || state.completedSlides.has(u.id - 1);
         const isCurrentActiveTimer = state.isGateTimerActive && (u.id > state.currentSlide);
-        const isUnlocked = COURSE_CONFIG.devMode || isDone || (isPrevDone && !isCurrentActiveTimer);
+        const isUnlocked = COURSE_CONFIG.devMode || isDone || (isCertSlide ? certUnlocked : (isPrevDone && !isCurrentActiveTimer)) || (state.quizPassed && u.id === 17);
         
         const activeCls = isActive 
           ? "bg-brand-primary text-white shadow-sm font-bold" 
@@ -2827,6 +2833,7 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
           if (parsed.passed) {
             state.quizPassed = true;
             state.quizScore = parsed.highestScore;
+            state.completedSlides.add(16);
           }
         }
       } catch (e) {
@@ -3073,8 +3080,16 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
       state.quizPassed = score >= 80;
       state.quizSubmitted = true;
 
+      if (state.quizPassed) {
+        state.completedSlides.add(16);
+        state.isGateTimerActive = false;
+        state.slideGateSecondsLeft = 0;
+      }
+
       // Save local state
       saveAttemptData(state.quizPassed, score);
+      renderOutline();
+      updateProgressUI();
 
       const remainingAttempts = Math.max(0, state.maxQuizAttempts - state.quizAttemptCount);
 
