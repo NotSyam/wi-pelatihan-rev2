@@ -1550,7 +1550,10 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
       quizAnswers: {},
       quizScore: 0,
       quizPassed: false,
-      isSubmittingScore: false
+      isSubmittingScore: false,
+      quizAttemptCount: 0,
+      maxQuizAttempts: 5,
+      highestQuizScore: 0
     };
 
     // ========================================================================
@@ -2700,12 +2703,55 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
 
     
     // ========================================================================
-    // NATIVE IN-APP QUIZ & GOOGLE SHEETS WEBHOOK ENGINE (PTPP)
+    // NATIVE IN-APP QUIZ & GOOGLE SHEETS WEBHOOK ENGINE (PTPP) - REVISED
     // ========================================================================
+    function getAttemptStorageKey() {
+      const nip = (state.participantNIP || '').trim();
+      return nip ? `ptpp_quiz_attempt_${nip}` : 'ptpp_quiz_attempt_default';
+    }
+
+    function loadAttemptData() {
+      try {
+        const key = getAttemptStorageKey();
+        const saved = localStorage.getItem(key);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          state.quizAttemptCount = parsed.attempts || 0;
+          state.highestQuizScore = parsed.highestScore || 0;
+          if (parsed.passed) {
+            state.quizPassed = true;
+            state.quizScore = parsed.highestScore;
+          }
+        }
+      } catch (e) {
+        console.warn('LocalStorage load error:', e);
+      }
+    }
+
+    function saveAttemptData(passed, currentScore) {
+      try {
+        const key = getAttemptStorageKey();
+        const highest = Math.max(state.highestQuizScore || 0, currentScore || 0);
+        state.highestQuizScore = highest;
+        const payload = {
+          attempts: state.quizAttemptCount,
+          highestScore: highest,
+          passed: passed || state.quizPassed,
+          timestamp: new Date().toISOString()
+        };
+        localStorage.setItem(key, JSON.stringify(payload));
+      } catch (e) {
+        console.warn('LocalStorage save error:', e);
+      }
+    }
+
     function renderNativeQuizSlide() {
+      loadAttemptData();
       const answeredCount = Object.keys(state.quizAnswers).length;
       const totalQ = QUIZ_QUESTIONS.length;
       const pctAnswered = Math.round((answeredCount / totalQ) * 100);
+      const remainingAttempts = Math.max(0, state.maxQuizAttempts - state.quizAttemptCount);
+      const isMaxReached = state.quizAttemptCount >= state.maxQuizAttempts && !state.quizPassed;
 
       return `
         <div class="max-w-4xl mx-auto space-y-5 pb-10">
@@ -2719,21 +2765,34 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
                 </div>
                 <h2 class="text-xl sm:text-2xl font-black tracking-tight">Kuis 10 Soal Work Instruction Pelatihan</h2>
                 <p class="text-xs sm:text-sm text-blue-100 mt-1 max-w-xl">
-                  Ambang batas kelulusan minimal: <b>80 / 100</b>. Skor dan data analitik Anda otomatis tersinkronisasi ke sistem HCM dan membuka akses Sertifikat Resmi di Slide 17.
+                  Ambang batas kelulusan minimal: <b>80 / 100</b>. Kuota pengerjaan dibatasi maksimal <b>5 Kali Percobaan</b>. Hanya nilai kelulusan $\\ge$ 80 yang disinkronkan ke rekap HCM dan membuka Sertifikat Resmi di Slide 17.
                 </p>
               </div>
-              <div class="bg-white/10 backdrop-blur-md px-5 py-3.5 rounded-2xl border border-white/20 flex md:flex-col items-center justify-between md:justify-center text-center shrink-0">
-                <span class="text-[11px] font-bold text-sky-200 uppercase tracking-wider">Passing Grade</span>
-                <span class="text-2xl sm:text-3xl font-black text-white">80<span class="text-xs font-normal text-sky-200">/100</span></span>
+              <div class="flex items-center gap-2.5 shrink-0">
+                <div class="bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/20 text-center">
+                  <span class="text-[10px] font-bold text-sky-200 uppercase tracking-wider block">Passing Grade</span>
+                  <span class="text-xl sm:text-2xl font-black text-white">80<span class="text-xs font-normal text-sky-200">/100</span></span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/20 text-center">
+                  <span class="text-[10px] font-bold text-sky-200 uppercase tracking-wider block">Percobaan</span>
+                  <span class="text-xl sm:text-2xl font-black ${remainingAttempts <= 1 && !state.quizPassed ? 'text-amber-300' : 'text-white'}">
+                    ${state.quizAttemptCount}<span class="text-xs font-normal text-sky-200">/${state.maxQuizAttempts}</span>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Participant Identity Form -->
           <div class="${UI.card} p-5 sm:p-6 shadow-md border-2 border-brand-primary/20">
-            <div class="flex items-center gap-2 pb-3 mb-4 border-b border-slate-200 dark:border-brand-darkBorder">
-              <span class="material-symbols-outlined text-brand-primary text-xl">badge</span>
-              <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">Data Peserta Pelatihan (Wajib Diisi untuk Rekap HCM & Sertifikat)</h3>
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200 dark:border-brand-darkBorder">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-brand-primary text-xl">badge</span>
+                <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">Data Peserta Pelatihan (Wajib Diisi untuk Rekap HCM & Sertifikat)</h3>
+              </div>
+              <div class="text-[11px] font-mono px-2.5 py-1 rounded-full ${remainingAttempts > 0 ? 'bg-sky-50 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300' : 'bg-rose-50 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300'} font-bold">
+                Sisa Kesempatan: ${remainingAttempts}x
+              </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -2742,7 +2801,7 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">NIP / NRP Pegawai <span class="text-rose-500">*</span></label>
-                <input type="text" id="quizParticipantNIP" value="${state.participantNIP || ''}" oninput="state.participantNIP = this.value; saveParticipantField('participantNIP', this.value);" placeholder="Contoh: 198503152010" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-brand-darkBorder bg-slate-50 dark:bg-brand-darkSubtle text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary" />
+                <input type="text" id="quizParticipantNIP" value="${state.participantNIP || ''}" onchange="state.participantNIP = this.value; saveParticipantField('participantNIP', this.value); loadAttemptData(); renderCurrentSlide();" placeholder="Contoh: 198503152010" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-brand-darkBorder bg-slate-50 dark:bg-brand-darkSubtle text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary" />
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Jabatan <span class="text-rose-500">*</span></label>
@@ -2784,8 +2843,8 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
                         ${q.options.map((opt, optIdx) => {
                           const isSelected = selectedOpt === optIdx;
                           return `
-                            <label onclick="selectQuizAnswer(${qIdx}, ${optIdx})" class="flex items-start gap-3 p-3 rounded-xl border transition-all cursor-pointer ${isSelected ? 'bg-brand-primary/10 border-brand-primary text-brand-primary dark:text-brand-lightBlue font-semibold' : 'bg-slate-50 dark:bg-brand-darkSubtle/60 border-slate-200 dark:border-brand-darkBorder hover:bg-slate-100 dark:hover:bg-brand-darkSubtle text-slate-700 dark:text-slate-300'}">
-                              <input type="radio" name="question_${qIdx}" value="${optIdx}" ${isSelected ? 'checked' : ''} class="mt-0.5 text-brand-primary focus:ring-brand-primary shrink-0" />
+                            <label onclick="${isMaxReached ? '' : `selectQuizAnswer(${qIdx}, ${optIdx})`}" class="flex items-start gap-3 p-3 rounded-xl border transition-all ${isMaxReached ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer'} ${isSelected ? 'bg-brand-primary/10 border-brand-primary text-brand-primary dark:text-brand-lightBlue font-semibold' : 'bg-slate-50 dark:bg-brand-darkSubtle/60 border-slate-200 dark:border-brand-darkBorder hover:bg-slate-100 dark:hover:bg-brand-darkSubtle text-slate-700 dark:text-slate-300'}">
+                              <input type="radio" name="question_${qIdx}" value="${optIdx}" ${isSelected ? 'checked' : ''} ${isMaxReached ? 'disabled' : ''} class="mt-0.5 text-brand-primary focus:ring-brand-primary shrink-0" />
                               <span class="text-xs sm:text-sm leading-snug">${opt}</span>
                             </label>
                           `;
@@ -2803,11 +2862,13 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
 
           <div class="p-5 rounded-2xl bg-white dark:bg-brand-darkSurface border border-slate-200 dark:border-brand-darkBorder shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4 sticky bottom-4 z-20">
             <div class="text-xs text-slate-500 text-center sm:text-left">
-              Pastikan seluruh biodata dan 10 butir soal telah terjawab lengkap sebelum mengklik tombol evaluasi.
+              ${isMaxReached 
+                ? '<span class="text-rose-500 font-bold">Kesempatan pengerjaan kuis telah habis (Maks. 5 kali). Silakan hubungi fasilitator HCM.</span>' 
+                : `Pastikan biodata dan 10 butir soal telah terjawab lengkap. Kesempatan tersisa: <b>${remainingAttempts}x</b>.`}
             </div>
-            <button id="btnSubmitQuiz" onclick="evaluateAndSubmitQuiz()" class="w-full sm:w-auto px-8 py-3 rounded-xl bg-brand-primary hover:bg-brand-primaryHover text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg btn-tactile cursor-pointer transition-all">
+            <button id="btnSubmitQuiz" onclick="evaluateAndSubmitQuiz()" ${isMaxReached ? 'disabled' : ''} class="w-full sm:w-auto px-8 py-3 rounded-xl ${isMaxReached ? 'bg-slate-400 cursor-not-allowed text-white' : 'bg-brand-primary hover:bg-brand-primaryHover text-white cursor-pointer'} font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg btn-tactile transition-all">
               <span class="material-symbols-outlined text-base">send</span>
-              <span>Kirim Jawaban & Evaluasi Nilai</span>
+              <span>${isMaxReached ? 'Batas Percobaan Habis' : 'Kirim Jawaban & Evaluasi Nilai'}</span>
             </button>
           </div>
         </div>
@@ -2853,6 +2914,15 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
     }
 
     async function evaluateAndSubmitQuiz() {
+      loadAttemptData();
+
+      // Check max attempts
+      if (state.quizAttemptCount >= state.maxQuizAttempts && !state.quizPassed) {
+        playTone('error');
+        alert("Batas maksimal kesempatan pengerjaan kuis (5 kali) telah habis! Hubungi admin HCM.");
+        return;
+      }
+
       // Validate identity fields
       const name = (state.participantName || '').trim();
       const nip = (state.participantNIP || '').trim();
@@ -2881,6 +2951,9 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
         submitBtn.innerHTML = `<span class="material-symbols-outlined text-base animate-spin">refresh</span><span>Memproses & Menghitung Nilai...</span>`;
       }
 
+      // Increment Attempt Counter
+      state.quizAttemptCount = (state.quizAttemptCount || 0) + 1;
+
       // Calculate score
       let correctCount = 0;
       QUIZ_QUESTIONS.forEach((q, idx) => {
@@ -2894,28 +2967,38 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
       state.quizPassed = score >= 80;
       state.quizSubmitted = true;
 
+      // Save local state
+      saveAttemptData(state.quizPassed, score);
+
+      const remainingAttempts = Math.max(0, state.maxQuizAttempts - state.quizAttemptCount);
+
       // Status text
-      const statusText = state.quizPassed ? "LULUS (>= 80)" : "BELUM LULUS (< 80)";
+      const statusText = state.quizPassed ? "LULUS (>= 80)" : (remainingAttempts === 0 ? "TIDAK LULUS (MAX ATTEMPT)" : "REMEDIAL (< 80)");
 
-      // Send to Webhook Google Sheet in background
-      try {
-        const payload = {
-          nama: name,
-          nip: nip,
-          jabatan: jabatan,
-          divisi: divisi,
-          skor: score,
-          status: statusText
-        };
+      // ANTI-SPAM LOGIC:
+      // Hanya kirim ke Webhook jika peserta LULUS (>= 80) ATAU jika jatah attempt telah habis (attempt ke-5)
+      const shouldSyncWebhook = state.quizPassed || (state.quizAttemptCount >= state.maxQuizAttempts);
 
-        // Fire request to Google Apps Script
-        fetch(QUIZ_WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(payload)
-        }).catch(err => console.warn("Background webhook sync warning:", err));
-      } catch (e) {
-        console.warn("Webhook fetch skipped:", e);
+      if (shouldSyncWebhook) {
+        try {
+          const payload = {
+            nama: name,
+            nip: nip,
+            jabatan: jabatan,
+            divisi: divisi,
+            skor: score,
+            status: statusText,
+            attempt: state.quizAttemptCount
+          };
+
+          fetch(QUIZ_WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload)
+          }).catch(err => console.warn("Background webhook sync warning:", err));
+        } catch (e) {
+          console.warn("Webhook fetch skipped:", e);
+        }
       }
 
       // Display Result Container
@@ -2935,17 +3018,17 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
                 </div>
                 <div>
                   <h3 class="text-lg font-black">SELAMAT! ANDA DINYATAKAN LULUS</h3>
-                  <p class="text-xs text-emerald-700 dark:text-emerald-300">Nilai Anda telah memenuhi syarat batas kelulusan minimal (80).</p>
+                  <p class="text-xs text-emerald-700 dark:text-emerald-300">Nilai Anda telah memenuhi syarat batas kelulusan minimal (80) pada percobaan ke-${state.quizAttemptCount}.</p>
                 </div>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white dark:bg-brand-darkSurface p-4 rounded-xl border border-emerald-200 dark:border-emerald-800 text-center">
                 <div><span class="text-[10px] text-slate-500 block">NILAI AKHIR</span><span class="text-2xl font-black text-emerald-600">${score}</span></div>
                 <div><span class="text-[10px] text-slate-500 block">JAWABAN BENAR</span><span class="text-2xl font-black text-slate-800 dark:text-white">${correctCount} / 10</span></div>
-                <div><span class="text-[10px] text-slate-500 block">PASSING GRADE</span><span class="text-2xl font-black text-slate-800 dark:text-white">80</span></div>
+                <div><span class="text-[10px] text-slate-500 block">PERCOBAAN</span><span class="text-2xl font-black text-slate-800 dark:text-white">${state.quizAttemptCount} / ${state.maxQuizAttempts}</span></div>
                 <div><span class="text-[10px] text-slate-500 block">STATUS</span><span class="text-xs font-black text-emerald-600 uppercase mt-2 block">LULUS</span></div>
               </div>
               <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-                <p class="text-xs text-emerald-800 dark:text-emerald-300">✓ Data analitik tersimpan di Google Sheets HCM. Akses Slide 17 (Penutup & Sertifikat) telah terbuka!</p>
+                <p class="text-xs text-emerald-800 dark:text-emerald-300">✓ Data kelulusan berhasil disinkronisasi ke Google Sheets HCM. Akses Slide 17 (Penutup & Sertifikat) telah terbuka!</p>
                 <button onclick="goToSlide(17)" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md btn-tactile cursor-pointer">
                   <span>Lanjut ke Penutup & Sertifikat</span>
                   <span class="material-symbols-outlined text-sm">arrow_forward</span>
@@ -2955,29 +3038,43 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
           `;
         } else {
           playTone('error');
+          const isFinalExhausted = remainingAttempts === 0;
           resultArea.innerHTML = `
             <div class="p-6 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border-2 border-rose-500 text-rose-900 dark:text-rose-200 shadow-xl space-y-4">
               <div class="flex items-center gap-3">
                 <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center shrink-0">
-                  <span class="material-symbols-outlined text-2xl">cancel</span>
+                  <span class="material-symbols-outlined text-2xl">${isFinalExhausted ? 'block' : 'cancel'}</span>
                 </div>
                 <div>
-                  <h3 class="text-lg font-black">BELUM MEMENUHI NILAI KELULUSAN</h3>
-                  <p class="text-xs text-rose-700 dark:text-rose-300">Skor Anda belum mencapai ambang batas minimal 80. Akses Sertifikat di Slide 17 masih terkunci.</p>
+                  <h3 class="text-lg font-black">${isFinalExhausted ? 'BATAS MAKSIMAL KESEMPATAN HABIS' : 'BELUM MEMENUHI NILAI KELULUSAN'}</h3>
+                  <p class="text-xs text-rose-700 dark:text-rose-300">
+                    ${isFinalExhausted 
+                      ? 'Anda telah menggunakan seluruh 5 kali kesempatan kuis dan belum mencapai nilai 80. Hasil akhir telah dicatat ke HCM.' 
+                      : `Skor Anda belum mencapai ambang batas minimal 80 pada percobaan ke-${state.quizAttemptCount}. Data remedial tidak dikirim ke sheet untuk mencegah data spam.`}
+                  </p>
                 </div>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white dark:bg-brand-darkSurface p-4 rounded-xl border border-rose-200 dark:border-rose-800 text-center">
-                <div><span class="text-[10px] text-slate-500 block">NILAI AKHIR</span><span class="text-2xl font-black text-rose-600">${score}</span></div>
+                <div><span class="text-[10px] text-slate-500 block">NILAI ANDA</span><span class="text-2xl font-black text-rose-600">${score}</span></div>
                 <div><span class="text-[10px] text-slate-500 block">JAWABAN BENAR</span><span class="text-2xl font-black text-slate-800 dark:text-white">${correctCount} / 10</span></div>
-                <div><span class="text-[10px] text-slate-500 block">SYARAT LULUS</span><span class="text-2xl font-black text-slate-800 dark:text-white">80</span></div>
-                <div><span class="text-[10px] text-slate-500 block">STATUS</span><span class="text-xs font-black text-rose-600 uppercase mt-2 block">REMEDIAL</span></div>
+                <div><span class="text-[10px] text-slate-500 block">SISA KESEMPATAN</span><span class="text-2xl font-black ${isFinalExhausted ? 'text-rose-600' : 'text-slate-800 dark:text-white'}">${remainingAttempts}x</span></div>
+                <div><span class="text-[10px] text-slate-500 block">STATUS</span><span class="text-xs font-black text-rose-600 uppercase mt-2 block">${isFinalExhausted ? 'TIDAK LULUS' : 'REMEDIAL'}</span></div>
               </div>
               <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-                <p class="text-xs text-rose-800 dark:text-rose-300">Silakan tinjau kembali materi pembelajaran pada modul dan ulangi kuis evaluasi ini.</p>
-                <button onclick="retakeQuiz()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md btn-tactile cursor-pointer">
-                  <span class="material-symbols-outlined text-sm">restart_alt</span>
-                  <span>Ulangi Kuis (Retake)</span>
-                </button>
+                <p class="text-xs text-rose-800 dark:text-rose-300">
+                  ${isFinalExhausted ? 'Silakan hubungi Unit HCM untuk pengajuan evaluasi susulan.' : `Anda masih memiliki sisa ${remainingAttempts} kali percobaan lagi untuk mencapai target 80.`}
+                </p>
+                ${!isFinalExhausted ? `
+                  <button onclick="retakeQuiz()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md btn-tactile cursor-pointer">
+                    <span class="material-symbols-outlined text-sm">restart_alt</span>
+                    <span>Ulangi Kuis (${remainingAttempts}x Tersisa)</span>
+                  </button>
+                ` : `
+                  <button onclick="goToSlide(0)" class="w-full sm:w-auto px-6 py-2.5 rounded-xl border border-rose-300 dark:border-rose-800 hover:bg-rose-100 dark:hover:bg-rose-900/40 text-rose-800 dark:text-rose-200 font-bold text-xs flex items-center justify-center gap-2 cursor-pointer">
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                    <span>Pelajari Kembali Materi</span>
+                  </button>
+                `}
               </div>
             </div>
           `;
@@ -2986,8 +3083,10 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
       }
 
       if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `<span class="material-symbols-outlined text-base">send</span><span>Kirim Ulang Evaluasi</span>`;
+        submitBtn.disabled = remainingAttempts === 0 && !state.quizPassed;
+        submitBtn.innerHTML = remainingAttempts === 0 && !state.quizPassed
+          ? `<span>Batas Percobaan Habis</span>`
+          : `<span class="material-symbols-outlined text-base">send</span><span>Kirim Ulang Evaluasi</span>`;
       }
     }
 
@@ -3016,7 +3115,7 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
             </div>
             <div class="p-4 rounded-2xl bg-slate-100 dark:bg-brand-darkSubtle border border-slate-200 dark:border-brand-darkBorder max-w-md mx-auto text-xs text-slate-600 dark:text-slate-300">
               <span class="block text-slate-400 font-mono text-[11px] mb-1">Status Saat Ini:</span>
-              ${state.quizSubmitted ? `<span class="text-rose-500 font-bold">Skor Anda: ${state.quizScore} (Belum Mencapai 80)</span>` : `<span class="text-amber-500 font-bold">Kuis Evaluasi Belum Dikerjakan</span>`}
+              ${state.quizSubmitted ? `<span class="text-rose-500 font-bold">Skor Anda: ${state.quizScore} (Percobaan: ${state.quizAttemptCount}/5)</span>` : `<span class="text-amber-500 font-bold">Kuis Evaluasi Belum Dikerjakan</span>`}
             </div>
             <div class="pt-2">
               <button onclick="goToSlide(16)" class="px-7 py-3 rounded-xl bg-brand-primary hover:bg-brand-primaryHover text-white font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg btn-tactile cursor-pointer">
@@ -3037,7 +3136,7 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
             </div>
             <h2 class="text-2xl sm:text-3xl font-black">Selamat! Pembelajaran Selesai</h2>
             <p class="text-xs sm:text-sm text-blue-100 max-w-xl mx-auto leading-relaxed">
-              Anda telah mempelajari seluruh materi Work Instruction Pelatihan PT PP (Persero) Tbk (PP/SOP/E3-029 REV-2) dan lulus evaluasi pemahaman dengan nilai <b>${state.quizScore} / 100</b>.
+              Anda telah mempelajari seluruh materi Work Instruction Pelatihan PT PP (Persero) Tbk (PP/SOP/E3-029 REV-2) dan lulus evaluasi pemahaman dengan nilai <b>${state.quizScore} / 100</b> (Percobaan ke-${state.quizAttemptCount}).
             </p>
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-200 font-mono text-xs font-bold border border-emerald-400/30 mt-2">
               <span class="material-symbols-outlined text-sm">verified</span>
@@ -3102,7 +3201,6 @@ const QUIZ_QUESTIONS = [{"id": 1, "question": "1. [C2] Dalam tahap Learning Need
         </div>
       `;
     }
-
 
     function confirmQuizSubmitted() {
       playTone('success');
